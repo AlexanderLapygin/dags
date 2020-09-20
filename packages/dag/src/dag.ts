@@ -1,10 +1,8 @@
-/**
- * Interface to provide DAG functionality.
- *
- * @param {UID} - id type
- */
 import { UID } from '@dags/uid';
 
+/**
+ * Provides DAG - Directed Acyclic Graph functionality.
+ */
 export class Dag {
 
   /**
@@ -29,7 +27,7 @@ export class Dag {
   private _parentMap = new Map<UID, Set<UID>>();
 
   /**
-   * Creates a DAG - Directed Acyclic Graph.
+   * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
    */
@@ -105,8 +103,6 @@ export class Dag {
   removeParenthood(child: UID, parent: UID): Dag {
     if(!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph");
     if(!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph");
-
-    this.checkCycle(child, parent)
 
     this.getParents(child).delete(parent);
     this.getChildren(parent).delete(child);
