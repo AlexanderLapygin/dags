@@ -9,28 +9,28 @@ export interface UID {
 /**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
-export class Dag {
+export class Dag<I extends UID> {
 
   /**
    * Set of nodes of the graph
    * @type {Set<UID>>}
    * @private
    */
-  private _nodes = new Set<UID>();
+  private _nodes = new Set<I>();
 
   /**
    * Map of nodes to their children.
    * @type {Map<UID, UID>}
    * @private
    */
-  private _childMap = new Map<UID, Set<UID>>();
+  private _childMap = new Map<I, Set<I>>();
 
   /**
    * Map of nodes to their parents.
    * @type {Map<UID, UID>}
    * @private
    */
-  private _parentMap = new Map<UID, Set<UID>>();
+  private _parentMap = new Map<I, Set<I>>();
 
   /**
    * Creates a DAG.
@@ -38,13 +38,13 @@ export class Dag {
    * @constructor
    * @param {UID} dagUID uid of this dag
    */
-  constructor(private dagUID: UID) {}
+  constructor(private dagUID: I) {}
 
   /**
    * Generate a new uid
    * @return {UID} some new uid.
    */
-  newUID(): UID {
+  newUID(): any {
     return this.dagUID.newUID();
   }
 
@@ -52,11 +52,11 @@ export class Dag {
    * Create new node of this graph
    * @return {UID} uid of the new node
    */
-  newNode(): UID {
-    const nodeUID = this.newUID();
+  newNode(): I {
+    const nodeUID: I = this.newUID();
     this._nodes.add(nodeUID);
-    this._parentMap.set(nodeUID, new Set<UID>());
-    this._childMap.set(nodeUID, new Set<UID>());
+    this._parentMap.set(nodeUID, new Set<I>());
+    this._childMap.set(nodeUID, new Set<I>());
     return nodeUID;
   }
 
@@ -65,7 +65,7 @@ export class Dag {
    * @return {Dag} this graph.
    * @param node
    */
-  deleteNode(node: UID): Dag {
+  deleteNode(node: I): Dag<I> {
     for (const parent of this.getParents(node)) {
       this.removeParenthood(node, parent);
     }
@@ -80,16 +80,16 @@ export class Dag {
   /**
    * @return all dag roots
    */
-  getNodes(): Set<UID> {
+  getNodes(): Set<I> {
     return this._nodes;
   }
 
-  getParents(node: UID): Set<UID> {
+  getParents(node: I): Set<I> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
     return this._parentMap.get(node)!;
   }
 
-  getChildren(node: UID): Set<UID> {
+  getChildren(node: I): Set<I> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
     return this._childMap.get(node)!;
   }
@@ -98,7 +98,7 @@ export class Dag {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {Dag} this dag
    */
-  setParenthood(child: UID, parent: UID): Dag {
+  setParenthood(child: I, parent: I): Dag<I> {
     if(!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph");
     if(!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph");
 
@@ -113,9 +113,9 @@ export class Dag {
   /**
    * Remove parent node from the given node and implicitly remove the given node
    * from the parent node as a child.
-   * @return {Dag} this dag
+   * @return {Dag<I>>} this dag
    */
-  removeParenthood(child: UID, parent: UID): Dag {
+  removeParenthood(child: I, parent: I): Dag<I> {
     if(!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph");
     if(!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph");
 
@@ -125,13 +125,13 @@ export class Dag {
     return this;
   }
 
-  private checkCycle(child: UID, parent: UID) {
+  private checkCycle(child: I, parent: I) {
     if(this.isDescendant(child, parent)) {
       throw new Error("The Parent-child relationship is not possible: this parenthood establishing leads to a cycle");
     }
   }
 
-  isDescendant(current: UID, tested: UID) {
+  isDescendant(current: I, tested: I) {
     if (current.equals(tested)) {
       return true;
     }

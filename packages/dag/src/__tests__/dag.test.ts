@@ -2,7 +2,7 @@ import { Dag, UID } from '../dag';
 import { UUID } from '@dags/uid';
 
 describe('Dag', () => {
-  let dag: Dag;
+  let dag: Dag<UID>;
 
   beforeEach(function() {
     dag = new Dag(new UUID());
