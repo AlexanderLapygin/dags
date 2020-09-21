@@ -1,26 +1,5 @@
 import { Dag, UID } from '../dag';
-
-import { v4 } from 'uuid';
-
-/**
- * Implements the UID interface that Dag requires.
- * @class Helper class just for testing.
- */
-class UUID implements UID {
-  private readonly _uuid!: string;
-
-  constructor() {
-    this._uuid = v4();
-  }
-
-  newUID(): UID {
-    return new UUID();
-  }
-
-  equals(uid: UID): boolean {
-    return uid instanceof UUID && this._uuid === uid._uuid;
-  }
-}
+import { UUID } from '@dags/uid';
 
 describe('Dag', () => {
   let dag: Dag;
