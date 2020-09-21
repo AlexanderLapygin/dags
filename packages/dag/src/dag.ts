@@ -1,8 +1,16 @@
 /**
- * Required interface
+ * Required interface of the Dag
  */
 export interface UID {
+  /**
+   * Generate new UID
+   */
   newUID(): any;
+
+  /**
+   * Check equality to the given UID
+   * @param uid
+   */
   equals(uid: UID): boolean;
 }
 
@@ -78,18 +86,28 @@ export class Dag<T extends UID> {
   }
 
   /**
-   * @return all dag roots
+   * @return nodeset of this dag
    */
   getNodes(): Set<T> {
     return this._nodes;
   }
 
+  /**
+   * Obtain parents of the given node.
+   * @param node
+   * @return parents of the given node.
+   */
   getParents(node: T): Set<T> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this._parentMap.get(node)!;
   }
 
+  /**
+   * Obtain children of the given node.
+   * @param node
+   * @return children of the given node.
+   */
   getChildren(node: T): Set<T> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -127,12 +145,6 @@ export class Dag<T extends UID> {
     return this;
   }
 
-  private checkCycle(child: T, parent: T) {
-    if(this.isDescendant(child, parent)) {
-      throw new Error("The Parent-child relationship is not possible: this parenthood establishing leads to a cycle");
-    }
-  }
-
   /**
    * Checking if the node being checked is a descendant or not.
    * @param current current node.
@@ -148,5 +160,11 @@ export class Dag<T extends UID> {
       }
     }
     return false;
+  }
+
+  private checkCycle(child: T, parent: T) {
+    if(this.isDescendant(child, parent)) {
+      throw new Error("The Parent-child relationship is not possible: this parenthood establishing leads to a cycle");
+    }
   }
 }
