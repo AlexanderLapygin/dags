@@ -2,7 +2,7 @@
  * Required interface
  */
 export interface UID {
-  newUID(): UID;
+  newUID(): any;
   equals(uid: UID): boolean;
 }
 
@@ -42,9 +42,9 @@ export class Dag<T extends UID> {
 
   /**
    * Generate a new uid
-   * @return {any} some new uid.
+   * @return some new uid.
    */
-  newUID(): any {
+  newUID(): T {
     return this.dagUID.newUID();
   }
 
