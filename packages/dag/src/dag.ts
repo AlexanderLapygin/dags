@@ -13,21 +13,21 @@ export class Dag<I extends UID> {
 
   /**
    * Set of nodes of the graph
-   * @type {Set<UID>>}
+   * @type {Set}
    * @private
    */
   private _nodes = new Set<I>();
 
   /**
    * Map of nodes to their children.
-   * @type {Map<UID, UID>}
+   * @type {Map}
    * @private
    */
   private _childMap = new Map<I, Set<I>>();
 
   /**
    * Map of nodes to their parents.
-   * @type {Map<UID, UID>}
+   * @type {Map}
    * @private
    */
   private _parentMap = new Map<I, Set<I>>();
@@ -36,13 +36,13 @@ export class Dag<I extends UID> {
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
-   * @param {UID} dagUID uid of this dag
+   * @param dagUID uid of this dag
    */
   constructor(private dagUID: I) {}
 
   /**
    * Generate a new uid
-   * @return {UID} some new uid.
+   * @return {any} some new uid.
    */
   newUID(): any {
     return this.dagUID.newUID();
@@ -86,11 +86,13 @@ export class Dag<I extends UID> {
 
   getParents(node: I): Set<I> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this._parentMap.get(node)!;
   }
 
   getChildren(node: I): Set<I> {
     if(!this._nodes.has(node)) throw new Error("node doesn't belong to this graph");
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this._childMap.get(node)!;
   }
 
