@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
  * @class Uid
  */
 
-export class UID {
+export class UID implements DagUID {
   private readonly _uuid!: string;
 
   constructor() {

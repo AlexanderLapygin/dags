@@ -1,4 +1,10 @@
-import { UID } from '@dags/uid';
+/**
+ * Required interface
+ */
+export interface UID {
+  newUID(): UID;
+  equals(uid: UID): boolean;
+}
 
 /**
  * Provides DAG - Directed Acyclic Graph functionality.
@@ -30,15 +36,24 @@ export class Dag {
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
+   * @param {UID} dagUID uid of this dag
    */
-  constructor() {}
+  constructor(private dagUID: UID) {}
+
+  /**
+   * Generate a new uid
+   * @return {UID} some new uid.
+   */
+  newUID(): UID {
+    return this.dagUID.newUID();
+  }
 
   /**
    * Create new node of this graph
    * @return {UID} uid of the new node
    */
   newNode(): UID {
-    const nodeUID = new UID();
+    const nodeUID = this.newUID();
     this._nodes.add(nodeUID);
     this._parentMap.set(nodeUID, new Set<UID>());
     this._childMap.set(nodeUID, new Set<UID>());
@@ -47,8 +62,8 @@ export class Dag {
 
   /**
    * Delete a node from nodeset of this graph.
-   * @param {UID} UID of the node to delete.
    * @return {Dag} this graph.
+   * @param node
    */
   deleteNode(node: UID): Dag {
     for (const parent of this.getParents(node)) {

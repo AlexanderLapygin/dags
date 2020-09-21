@@ -26,7 +26,6 @@
         "pub": "yarn build:release && yarn publish --access public"
     },
     "dependencies": {
-        "@dags/uid": "^0.1.0"
     },
     "files": [
         "*.js",

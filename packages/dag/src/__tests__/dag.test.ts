@@ -1,16 +1,38 @@
-import { Dag } from '../dag';
-import { UID } from '@dags/uid';
+import { Dag, UID } from '../dag';
+
+import { v4 } from 'uuid';
+
+/**
+ * Implements the UID interface that Dag requires.
+ * @class Helper class just for testing.
+ */
+
+class UUID implements UID {
+  private readonly _uuid!: string;
+
+  constructor() {
+    this._uuid = v4();
+  }
+
+  newUID(): UID {
+    return new UUID();
+  }
+
+  equals(uid: UID): boolean {
+    return uid instanceof UUID && this._uuid === uid._uuid;
+  }
+}
 
 describe('Dag', () => {
   let dag: Dag;
 
   beforeEach(function() {
-    dag = new Dag();
+    dag = new Dag(new UUID());
   })
 
   describe("constructor", () => {
     it("Should execute without any problem", () => {
-      expect(() => new Dag()).not.toThrow();
+      expect(() => new Dag(new UUID())).not.toThrow();
     })
     it("Should return an empty nodeset", () => {
       expect(dag.getNodes().size).toBe(0);
@@ -27,10 +49,16 @@ describe('Dag', () => {
     })
   })
 
-  describe("newNode", () => {
-    it("Should return UID", () => {
-      expect(dag.newNode() instanceof UID).toBe(true);
+  describe("newUID", () => {
+    it("Should return a value of type 'object'", () => {
+      expect(typeof dag.newUID()).toBe('object')
     })
+    it("Should return a unique value", () => {
+      expect(dag.newUID() == dag.newUID()).not.toBe(true);
+    })
+  })
+
+  describe("newNode", () => {
     it("Should increase a nodeset size", () => {
       dag.newNode();
       expect(dag.getNodes().size).toBe(1);
@@ -100,7 +128,7 @@ describe('Dag', () => {
       expect(dag.getParents(current)).not.toContain(parent);
     });
     it("Should throw an error in case of orphan given node", () => {
-      expect(() => dag.getParents(new UID())).toThrowError("node doesn't belong to this graph");
+      expect(() => dag.getParents(dag.newUID())).toThrowError("node doesn't belong to this graph");
     });
 
   })
@@ -114,13 +142,13 @@ describe('Dag', () => {
     })
 
     it("Should throw an error in case of both orphan UIDs", () => {
-      expect(() => dag.setParenthood(new UID(), new UID())).toThrowError();
+      expect(() => dag.setParenthood(dag.newUID(), dag.newUID())).toThrowError();
     });
     it("Should throw an Error in case of orphan currentNode", () => {
-      expect(() => dag.setParenthood(new UID(), parent)).toThrowError("Child node doesn't belong to this graph");
+      expect(() => dag.setParenthood(dag.newUID(), parent)).toThrowError("Child node doesn't belong to this graph");
     });
     it("Should throw an Error in case of orphan parent", () => {
-      expect(() => dag.setParenthood(child, new UID())).toThrowError("Parent node doesn't belong to this graph");
+      expect(() => dag.setParenthood(child, dag.newUID())).toThrowError("Parent node doesn't belong to this graph");
     });
     it('Should return this dag', () => {
       expect(dag.setParenthood(child, parent)).toBe(dag);
@@ -160,13 +188,13 @@ describe('Dag', () => {
     })
 
     it("Should throw an error in case of both orphan UIDs", () => {
-      expect(() => dag.removeParenthood(new UID(), new UID())).toThrowError();
+      expect(() => dag.removeParenthood(dag.newUID(), dag.newUID())).toThrowError();
     });
     it("Should throw an Error in case of orphan currentNode", () => {
-      expect(() => dag.removeParenthood(new UID(), parent)).toThrowError("Child node doesn't belong to this graph");
+      expect(() => dag.removeParenthood(dag.newUID(), parent)).toThrowError("Child node doesn't belong to this graph");
     });
     it("Should throw an Error in case of orphan parent", () => {
-      expect(() => dag.removeParenthood(child, new UID())).toThrowError("Parent node doesn't belong to this graph");
+      expect(() => dag.removeParenthood(child, dag.newUID())).toThrowError("Parent node doesn't belong to this graph");
     });
     it('Should return this dag', () => {
       expect(dag.removeParenthood(child, parent)).toBe(dag);
@@ -198,7 +226,7 @@ describe('Dag', () => {
       expect(dag.getChildren(current)).not.toContain(child);
     });
     it("Should throw an error in case of orphan given node", () => {
-      expect(() => dag.getChildren(new UID())).toThrowError("node doesn't belong to this graph");
+      expect(() => dag.getChildren(dag.newUID())).toThrowError("node doesn't belong to this graph");
     });
   })
 
