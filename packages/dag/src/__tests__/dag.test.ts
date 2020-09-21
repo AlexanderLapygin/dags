@@ -6,7 +6,6 @@ import { v4 } from 'uuid';
  * Implements the UID interface that Dag requires.
  * @class Helper class just for testing.
  */
-
 class UUID implements UID {
   private readonly _uuid!: string;
 
