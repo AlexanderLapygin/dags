@@ -133,6 +133,11 @@ export class Dag<T extends UID> {
     }
   }
 
+  /**
+   * Checking if the node being checked is a descendant or not.
+   * @param current current node.
+   * @param tested tested node.
+   */
   isDescendant(current: T, tested: T) {
     if (current.equals(tested)) {
       return true;
