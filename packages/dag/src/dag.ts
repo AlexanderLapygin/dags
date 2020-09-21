@@ -117,7 +117,7 @@ export class Dag {
   }
 
   isDescendant(current: UID, tested: UID) {
-    if (current === tested) {
+    if (current.equals(tested)) {
       return true;
     }
     for(const child of this.getChildren(current)) {
