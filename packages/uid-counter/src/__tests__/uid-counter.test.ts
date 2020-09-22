@@ -1,32 +1,32 @@
-import { UUID } from '../uid';
+import { UIDCounter } from '../uid-counter';
 
 describe('UID', () => {
   describe('constructor', () => {
     it('Should create UID successfully', () => {
-      expect(() => new UUID()).not.toThrow();
+      expect(() => new UIDCounter()).not.toThrow();
     });
     it('Should create different UIDs', () => {
-      expect(new UUID()).not.toEqual(new UUID());
+      expect(new UIDCounter()).not.toEqual(new UIDCounter());
     });
   });
   describe('equals', () => {
     it('Should return false on different UIDs', () => {
-      expect(new UUID().equals(new UUID())).toBe(false);
+      expect(new UIDCounter().equals(new UIDCounter())).toBe(false);
     });
 
     it('Should be true on the same UIDs', () => {
-      const uid1 = new UUID();
+      const uid1 = new UIDCounter();
       const uid2 = uid1;
       expect(uid1.equals(uid2)).toBe(true);
     });
   });
   describe('newUID', () => {
-    const uuid = new UUID();
+    const uid = new UIDCounter();
     it('Should return unique ids', () => {
-      expect(uuid.newUID() == uuid.newUID()).toBe(false);
+      expect(uid.newUID() == uid.newUID()).toBe(false);
     });
     it('Should return a value of type \'object\'', () => {
-      expect(typeof uuid.newUID()).toBe('object');
+      expect(typeof uid.newUID()).toBe('object');
     });
   });
 });
