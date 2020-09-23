@@ -25,10 +25,6 @@
         "test:coverage": "yarn test --coverage",
         "pub": "yarn build:release && yarn publish --access public"
     },
-    "devDependencies": {
-        "@dags/uid-uuid": "^0.1.0",
-        "@dags/uid-counter": "^0.1.0"
-    },
     "files": [
         "*.js",
         "*.d.ts",
