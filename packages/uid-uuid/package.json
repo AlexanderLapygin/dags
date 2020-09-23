@@ -1,6 +1,6 @@
 {
   "name": "@dags/uid-uuid",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Abstract unique identifier",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -25,9 +25,11 @@
     "pub": "yarn build:release && yarn publish --access public"
   },
   "dependencies": {
-    "@dags/dag": "^0.1.0",
     "@types/uuid": "^8.3.0",
     "uuid": "^8.1.0"
+  },
+  "peerDependencies": {
+    "@dags/dag": "1.0.x"
   },
   "files": [
     "*.js",
