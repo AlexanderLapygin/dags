@@ -24,8 +24,11 @@
         "test:coverage": "yarn test --coverage",
         "pub": "yarn build:release && yarn publish --access public"
     },
+    "devDependencies": {
+        "@dags/dag": "1.x"
+    },
     "peerDependencies": {
-        "@dags/dag": "1.0.x"
+        "@dags/dag": "1.x"
     },
     "files": [
         "*.js",

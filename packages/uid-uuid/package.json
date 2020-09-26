@@ -28,8 +28,11 @@
     "@types/uuid": "^8.3.0",
     "uuid": "^8.1.0"
   },
+  "devDependencies": {
+    "@dags/dag": "1.x"
+  },
   "peerDependencies": {
-    "@dags/dag": "1.0.x"
+    "@dags/dag": "1.x"
   },
   "files": [
     "*.js",
