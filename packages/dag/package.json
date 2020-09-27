@@ -22,7 +22,7 @@
         "clean": "rimraf *.d.ts coverage dist",
         "test": "jest",
         "test:coverage": "yarn test --coverage",
-        "pub": "yarn build:release && yarn publish --access public"
+        "pub:test": "yarn publish --access public"
     },
     "files": [
         "*.js",
