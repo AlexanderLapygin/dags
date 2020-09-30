@@ -29,10 +29,10 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "@dags/dag": "1.x"
+    "@dags/dag": "0.x"
   },
   "peerDependencies": {
-    "@dags/dag": "1.x"
+    "@dags/dag": "0.x"
   },
   "files": [
     "*.js",

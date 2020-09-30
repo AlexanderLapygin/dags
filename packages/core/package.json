@@ -28,7 +28,7 @@
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@dags/dag": "1.0.0"
+    "@dags/dag": "0.1.0"
   },
   "license": "MIT",
   "repository": "https://github.com/AlexanderLapygin/dags",
