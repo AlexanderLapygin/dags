@@ -131,7 +131,7 @@ export class Dag<T extends UID> {
   }
 
   /**
-   * Remove parent node from the given node and implicitly remove the given node
+   * Remove parent node from the given node and implicitly remove the given node.
    * from the parent node as a child.
    * @return {Dag<T>>} this dag
    */
