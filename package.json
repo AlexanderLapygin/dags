@@ -23,8 +23,6 @@
     "patch": "node -r esm scripts/patch-workspace.js",
     "release": "lerna publish",
     "release:ci": "lerna publish -y --loglevel verbose",
-    "release:next": "lerna publish --force-publish=* --preid next --dist-tag next",
-    "publish:next": "lerna publish from-package --dist-tag next"
   },
   "devDependencies": {
     "@babel/cli": "7.10.5",
