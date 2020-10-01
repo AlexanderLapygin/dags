@@ -16,21 +16,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
-      - run: yarn prestart
-        name: Bootstrap monorepository
+      - name: Bootstrap monorepository
+        run: yarn prestart
 
-      - run: yarn build
-        name: Build all packages
+      - name: Build all packages
+        run: yarn build
 
-      - run: yarn test
       - name: Run tests
+        run: yarn test
 
 #      - run: yarn release -y
 #        env:
