@@ -1,1 +1,1 @@
-# dags
+# Library implementing Direct Acyclic Graph
