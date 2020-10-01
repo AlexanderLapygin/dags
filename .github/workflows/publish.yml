@@ -32,6 +32,24 @@ jobs:
       - name: Run tests
         run: yarn test
 
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Bootstrap monorepository
+        run: yarn prestart
+
+      - name: Build all packages
+        run: yarn build
+
 #      - run: yarn release -y
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
