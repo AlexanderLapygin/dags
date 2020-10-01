@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Graphs",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@dags/dag": "^0.2.5"
+    "@dags/dag": "^0.2.6"
   },
   "license": "MIT",
   "repository": "https://github.com/AlexanderLapygin/dags",
