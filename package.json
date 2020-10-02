@@ -21,7 +21,7 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bundlesize": "bundlesize -c bundlesize.config.json",
     "patch": "node -r esm scripts/patch-workspace.js",
-    "release": "lerna publish",
+    "release": "lerna publish from-package",
     "release:ci": "lerna publish -y --loglevel verbose"
   },
   "devDependencies": {
