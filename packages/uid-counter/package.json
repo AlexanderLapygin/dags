@@ -1,6 +1,6 @@
 {
     "name": "@dags/uid-counter",
-    "version": "0.2.7",
+    "version": "0.2.8-rc.0",
     "description": "Abstract unique identifier",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -25,7 +25,7 @@
         "pub": "yarn build:release && yarn publish --access public"
     },
     "devDependencies": {
-        "@dags/dag": "^0.2.7"
+        "@dags/dag": "^0.2.8-rc.0"
     },
     "peerDependencies": {
         "@dags/dag": "0.x"
