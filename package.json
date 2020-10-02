@@ -20,11 +20,8 @@
     "lint": "lerna run lint --no-private --stream",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bundlesize": "bundlesize -c bundlesize.config.json",
-    "patch": "node -r esm scripts/patch-workspace.js",
     "version:release": "lerna version --conventional-commits --conventional-graduate",
-    "version:pre-release": "lerna version --conventional-commits --conventional-prerelease --preid=rc",
     "release": "lerna publish from-package",
-    "release:ci": "lerna publish -y --loglevel verbose"
   },
   "devDependencies": {
     "@babel/cli": "7.10.5",
