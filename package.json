@@ -11,7 +11,7 @@
     "url": "git+https://github.com/AlexanderLapygin/dags.git"
   },
   "scripts": {
-    "prestart": "yarn bootstrap",
+    "prestart": "yarn && yarn bootstrap",
     "boot": "yarn prestart && yarn build",
     "build": "lerna run build --no-private --stream",
     "clean": "lerna clean --yes && rimraf node_modules",
