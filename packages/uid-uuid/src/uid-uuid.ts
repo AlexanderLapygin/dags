@@ -3,7 +3,7 @@ import { UID } from '@dags/dag';
 
 /**
  * Implements the UID interface that Dag requires.
- * @class Unique id.
+ * @class Unique id
  */
 export class UUID implements UID {
   private readonly _uuid!: string;
