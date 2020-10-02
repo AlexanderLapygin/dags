@@ -57,7 +57,7 @@ export class Dag<T extends UID> {
   }
 
   /**
-   * Create new node of this graph
+   * Create new node of this graph.
    * @return {UID} uid of the new node
    */
   newNode(): T {
