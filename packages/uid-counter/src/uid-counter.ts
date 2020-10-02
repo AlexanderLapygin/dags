@@ -2,7 +2,7 @@ import { UID } from '@dags/dag';
 
 /**
  * Implements the UID interface that Dag requires.
- * @class Unique id.
+ * @class Unique id
  */
 export class UIDCounter implements UID {
   private static _counter = 0;
