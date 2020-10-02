@@ -3,8 +3,8 @@ Thank you for considering contributing to our project. Your help is very welcome
 There're many ways to contribute, help to improve these projects and spread the word. This doc describes some general
 guidelines for some of them.
 
-When contributing, it's better to first discuss the change you wish to make via issue, email, or any other method with
-the owners of this repository before making a change.
+When contributing, it's better to first discuss a change you wish to make via issue, email, or any other method with the
+owners of this repository before making one.
 
 All members of our community are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
