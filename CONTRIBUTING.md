@@ -133,7 +133,7 @@ the following categories:
 - `docs`: changing existing or creating new documentation (i.e. README, docs for usage of a lib or cli usage)
 - `build`: all changes regarding the build of the software, changes to dependencies or the addition of new dependencies
 - `test`: all changes regarding tests (adding new tests or changing existing ones)
-- `ci`: all changes regarding the configuration of continous integration (i.e. github actions, ci system)
+- `ci`: all changes regarding the configuration of continuous integration (i.e. github actions, ci system)
 - `chore`: all changes to the repository that do not fit into any of the above categories
 
 If you are interested in the detailed specification you can visit
