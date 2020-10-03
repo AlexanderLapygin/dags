@@ -15,7 +15,7 @@ guidelines that should help you as you prepare your contribution.
 - [Development](#development)
   - [Tooling](#tooling)
   - [Commands](#commands)
-    - [Yarn Workspace](#yarn-workspace)
+    - [Package Aliasing and Yarn Workspace](#package-aliasing-and-yarn-workspace)
 - [Think you found a bug?](#think-you-found-a-bug)
 - [Proposing new or changed API?](#proposing-new-or-changed-api)
 - [Making a Pull Request?](#making-a-pull-request)
