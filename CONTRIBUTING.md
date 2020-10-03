@@ -142,7 +142,7 @@ https://www.conventionalcommits.org/ or check out the
 
 ### Steps to PR
 
-- Fork of the jfront-ui repository and clone your fork
+- Fork of the `dags` repository and clone your fork
 - Create a new branch out of the `develop` branch. We follow the convention
   `[type/scope]`. For example `fix/accordion-hook`, `docs/menu-typo`
 
@@ -164,4 +164,4 @@ releases and publishes them to NPM.
 
 ## License
 
-By contributing your code to the DAGs GitHub repository, you agree to license your contribution under the MIT license.
+By contributing your code to the `dags` GitHub repository, you agree to license your contribution under the MIT license.
