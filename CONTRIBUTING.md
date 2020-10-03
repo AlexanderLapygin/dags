@@ -22,6 +22,7 @@ guidelines that should help you as you prepare your contribution.
   - [Commit Convention](#commit-convention)
   - [Steps to PR](#steps-to-pr)
   - [Tests](#tests)
+  - [Continuous integration](#continuous-integration)
 - [License](#license)
 
 ## Setup
@@ -158,9 +159,13 @@ All commits that fix bugs or add features need a test.
 
 DAGs uses [GitHub Actions](https://github.com/features/actions) for CI processing.
 
-- On push in master branch CI creates the releases and publish them to NPM.
-- On `yarn version:release` Lerna bumps the versions of the changed packages, push them, then CI in its turn creates the
-releases and publishes them to NPM.
+- With push in master branch CI creates the releases and publish them to NPM.
+
+## Publishing
+
+The versions of the changed packages are published using the `version:release` command.
+That is, when the `yarn version:release` command is executed, Lerna bumps the versions of the changed packages, push
+them, after which CI in its turn creates the releases and publishes them to NPM.
 
 ## License
 
