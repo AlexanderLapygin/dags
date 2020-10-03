@@ -1,1 +1,1 @@
-# This library implements Direct Acyclic Graph in TypeScript.
+# A library that implements the basic Directed Acyclic Graph functionality
