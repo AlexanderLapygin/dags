@@ -17,10 +17,10 @@ guidelines that should help you as you prepare your contribution.
   - [Commands](#commands)
     - [Package Aliasing and Yarn Workspace](#package-aliasing-and-yarn-workspace)
 - [Think you found a bug?](#think-you-found-a-bug)
-- [Proposing new or changed API?](#proposing-new-or-changed-api)
+- [Proposing something new?](#proposing-something-new)
 - [Making a Pull Request?](#making-a-pull-request)
   - [Commit Convention](#commit-convention)
-  - [Tests](#tests)
+  - [Testing](#testing)
   - [Steps to Pull Request](#steps-to-pull-request)
   - [Continuous integration](#continuous-integration)
     - [Publication details](#publication-details)
@@ -54,8 +54,8 @@ DAGs uses a monorepo structure, this means each module has its own package and c
 
 ### Tooling
 
-- [Lerna](https://lerna.js.org/) to manage installation of dependencies and running various scripts. We also have yarn
-workspaces enabled by default.
+- [Lerna](https://lerna.js.org/) to manage installation of dependencies and running various scripts. We also have Yarn
+Workspaces enabled by default.
 
 ### Commands
 
@@ -111,10 +111,10 @@ all components.
 Please conform to the issue template and provide a clear path to reproduction with a code example.
 The best way to show the bug is to add a failing unit test to your fork and pass it to us by the pull request.
 
-## Proposing new or changed API?
+## Proposing something new?
 
-Please provide thoughtful comments and some sample API code. Proposals that doesn't line up with our roadmap or doesn't
-have a thoughtful explanation will be closed.
+Please provide thoughtful comments and some sample code. Proposals that doesn't line up with our roadmap or doesn't have
+a thoughtful explanation will be closed.
 
 ## Making a Pull Request?
 
@@ -146,7 +146,7 @@ For example, `fix/dag`, `docs/core`.
 If you are interested in the detailed specification you can visit https://www.conventionalcommits.org/ or check out the
 [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
-### Tests
+### Testing
 
 All commits that fix bugs or add features need a test.
 
@@ -176,4 +176,4 @@ releases and publishes them to NPM.
 
 ## License
 
-By contributing your code to the `dags` GitHub repository, you agree to license your contribution under the MIT license.
+By contributing your code to this repository, you agree to license your contribution under the [MIT license](LICENSE).
