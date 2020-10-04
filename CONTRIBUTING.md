@@ -54,8 +54,8 @@ DAGs uses a monorepo structure, this means each module has its own package and c
 
 ### Tooling
 
-- [Lerna](https://lerna.js.org/) to manage installation of dependencies and running various scripts. We also have Yarn
-Workspaces enabled by default.
+- [Lerna](https://lerna.js.org/) to manage installation of dependencies and running various scripts. We also have [Yarn
+Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) enabled by default.
 
 ### Commands
 
@@ -75,8 +75,8 @@ components.
 
 #### Package Aliasing and Yarn Workspace
 
-Since we're using lerna monorepo + yarn workspaces by default, this enables us
-to run commands within component packages directly from the root.
+We're using [Lerna](https://lerna.js.org/) monorepo + [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
+to manage installation of dependencies and running various scripts.
 
 Each component is named this way: `@dags/[module]`. Let's say we want to build the `dag` component. Here's how to do it:
 
