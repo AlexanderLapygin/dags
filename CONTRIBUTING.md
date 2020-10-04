@@ -21,8 +21,9 @@ guidelines that should help you as you prepare your contribution.
 - [Making a Pull Request?](#making-a-pull-request)
   - [Commit Convention](#commit-convention)
   - [Tests](#tests)
-  - [Steps to PR](#steps-to-pr)
+  - [Steps to Pull Request](#steps-to-pull-request)
   - [Continuous integration](#continuous-integration)
+    - [Publication details](#publication-details)
 - [License](#license)
 
 ## Setup
@@ -149,26 +150,29 @@ If you are interested in the detailed specification you can visit https://www.co
 
 All commits that fix bugs or add features need a test.
 
-### Steps to PR
+### Steps to Pull Request
 
 1. Fork of the `dags` repository and clone your fork.
-2. Create a new branch out of the `develop` branch.
-3. Make the changes needed for your PR.
-4. Make sure you cover all code changes with unit tests.
-5. Update [README.md](README.md) to reflect changes related to public API and everything relevant.
-6. When you are ready, create Pull Request of your fork into the original repository.
+2. Make the changes needed for your PR in the `master` branch.
+3. Make sure you cover all code changes with unit tests.
+4. Update [README.md](README.md) to reflect every relevant change.
+5. When you are ready, create a PR of your fork into the original repository.
 
 ## Continuous integration
 
-DAGs uses [GitHub Actions](https://github.com/features/actions) for CI processing.
+Now, in the early stages of development, we use the
+[Continuous integration](https://martinfowler.com/articles/branching-patterns.html#continuous-integration) pattern as
+our branching policy. In fact, everything is done in the `master` branch.
 
-- With push in master branch CI creates the releases and publish them to NPM.
+CI is based on the functionality of [GitHub Actions](https://github.com/features/actions).
 
-## Publishing
+On each push in `master` branch CI creates the releases of the changed public modules and publish them to NPM.
 
-The versions of the changed packages are published using the `versionup-then-release-in-ci` command.
-That is, when the `versionup-then-release-in-ci` command is executed, Lerna bumps the versions of the changed packages,
-push them, after which CI in its turn creates the releases and publishes them to NPM.
+### Publication details
+
+The versions of the changed public modules are published by the `versionup-then-release-in-ci` command. When it is
+executed, Lerna bumps the versions of the changed packages, push them to github, after which CI in its turn creates the
+releases and publishes them to NPM.
 
 ## License
 
