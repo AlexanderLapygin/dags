@@ -1,1 +1,1 @@
-# A library that implements a directed acyclic graph and some related functionality.
+# A library that implements a Directed Acyclic Graph and some related functionality.
