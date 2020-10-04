@@ -67,7 +67,7 @@ components.
 
 **`yarn test`**: run test for all component packages
 
-**`yarn versionup-and-release-in-ci`**: bump the version of the changed packages and then publish them 
+**`yarn versionup-then-release-in-ci`**: bump the version of the changed packages and then publish them 
 
 **`yarn [package] <cmd>`**: Run a command on the specific package you're working on. You can run `build`, `test`,
 `lint` commands
@@ -166,8 +166,8 @@ DAGs uses [GitHub Actions](https://github.com/features/actions) for CI processin
 
 ## Publishing
 
-The versions of the changed packages are published using the `versionup-and-release-in-ci` command.
-That is, when the `versionup-and-release-in-ci` command is executed, Lerna bumps the versions of the changed packages,
+The versions of the changed packages are published using the `versionup-then-release-in-ci` command.
+That is, when the `versionup-then-release-in-ci` command is executed, Lerna bumps the versions of the changed packages,
 push them, after which CI in its turn creates the releases and publishes them to NPM.
 
 ## License

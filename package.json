@@ -20,7 +20,7 @@
     "lint": "lerna run lint --no-private --stream",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bundlesize": "bundlesize -c bundlesize.config.json",
-    "versionup-and-release-in-ci": "lerna version --conventional-commits --conventional-graduate",
+    "versionup-then-release-in-ci": "lerna version --conventional-commits --conventional-graduate",
     "release": "lerna publish from-package",
     "dag": "yarn workspace @dags/dag",
     "uid-counter": "yarn workspace @dags/uid-counter",
