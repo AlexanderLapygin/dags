@@ -23,7 +23,7 @@ guidelines that should help you as you prepare your contribution.
   - [Testing](#testing)
   - [Steps to Pull Request](#steps-to-pull-request)
   - [Continuous integration](#continuous-integration)
-    - [Publication details](#publication-details)
+    - [Publishing details](#publishing-details)
 - [License](#license)
 
 ## Setup
@@ -168,7 +168,7 @@ CI is based on the functionality of [GitHub Actions](https://github.com/features
 
 On each push in `master` branch CI creates the releases of the changed public modules and publish them to NPM.
 
-### Publication details
+### Publishing details
 
 The versions of the changed public modules are published by the `versionup-then-release-in-ci` command. When it is
 executed, Lerna bumps the versions of the changed packages, push them to github, after which CI in its turn creates the
