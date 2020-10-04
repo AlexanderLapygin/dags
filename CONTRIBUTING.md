@@ -20,8 +20,8 @@ guidelines that should help you as you prepare your contribution.
 - [Proposing new or changed API?](#proposing-new-or-changed-api)
 - [Making a Pull Request?](#making-a-pull-request)
   - [Commit Convention](#commit-convention)
-  - [Steps to PR](#steps-to-pr)
   - [Tests](#tests)
+  - [Steps to PR](#steps-to-pr)
   - [Continuous integration](#continuous-integration)
 - [License](#license)
 
@@ -121,12 +121,11 @@ Follow the pulling requests rules below, please!
 
 ### Commit Convention
 
-Before you create a Pull Request, please check whether your commits comply with
-the commit conventions used in this repository.
+Before you create a Pull Request, please check whether your commits comply with the commit conventions used in this
+repository.
 
-When you create a commit we kindly ask you to follow the convention
-`category(scope or module): message` in your commit message while using one of
-the following categories:
+When you create a commit we kindly ask you to follow the convention `category(scope or module): message` in your commit
+message while using one of the following categories:
 
 - `feat / feature`: all changes that introduce completely new code or new features
 - `fix`: changes that fix a bug (ideally you will additionally reference an issue if present)
@@ -137,23 +136,27 @@ the following categories:
 - `ci`: all changes regarding the configuration of continuous integration (i.e. github actions, ci system)
 - `chore`: all changes to the repository that do not fit into any of the above categories
 
-If you are interested in the detailed specification you can visit
-https://www.conventionalcommits.org/ or check out the
-[Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
-
-### Steps to PR
-
-- Fork of the `dags` repository and clone your fork
-- Create a new branch out of the `develop` branch. We follow the convention
-  `[type/scope]`. For example `fix/accordion-hook`, `docs/menu-typo`
-
-  - `type` can be either `docs`, `fix`, `feat`, `build`, or any other
-    conventional commit type
+We also follow the convention `[type/scope]`, where:
+  - `type` can be either `docs`, `fix`, `feat`, `build`, or any other conventional commit type
   - `scope` is just a short id that describes the scope of work.
+
+For example, `fix/dag`, `docs/core`. 
+ 
+If you are interested in the detailed specification you can visit https://www.conventionalcommits.org/ or check out the
+[Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
 ### Tests
 
 All commits that fix bugs or add features need a test.
+
+### Steps to PR
+
+1. Fork of the `dags` repository and clone your fork.
+2. Create a new branch out of the `develop` branch.
+3. Make the changes needed for your PR.
+4. Make sure you cover all code changes with unit tests.
+5. Update [README.md](README.md) to reflect changes related to public API and everything relevant.
+6. When you are ready, create Pull Request of your fork into the original repository.
 
 ## Continuous integration
 
