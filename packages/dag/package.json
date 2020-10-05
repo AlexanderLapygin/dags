@@ -10,7 +10,7 @@
         "type": "git",
         "url": "https://github.com/AlexanderLapygin/dags.git"
     },
-    "homepage": "https://github.com/AlexanderLapygin/dags/tree/develop/packages/dag#readme",
+    "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/dag/README.md",
     "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
     "license": "MIT",
     "scripts": {

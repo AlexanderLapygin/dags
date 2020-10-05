@@ -13,6 +13,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderLapygin/dags.git"
+  },
+  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/core/README.md",
+  "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "start": "nodemon --watch src --exec yarn build -e ts,tsx",
@@ -30,8 +37,6 @@
   "dependencies": {
     "@dags/dag": "^0.2.9"
   },
-  "license": "MIT",
-  "repository": "https://github.com/AlexanderLapygin/dags",
   "keywords": [
     "data structure",
     "dag",
