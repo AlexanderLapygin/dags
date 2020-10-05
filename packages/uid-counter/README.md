@@ -1,1 +1,3 @@
-# This library implements UID as a counter - for cases where globally uniqueness is not required.
+# A TypeScript library for generating UIDs, which is implemented as a counter.
+
+It is specialized for cases that do not require global uniqueness, but require memory savings and speed.
