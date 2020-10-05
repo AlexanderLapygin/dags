@@ -21,7 +21,8 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bundlesize": "bundlesize -c bundlesize.config.json",
     "versionup-then-release-by-ci": "lerna version --conventional-commits --conventional-graduate",
-    "release": "lerna publish from-package",
+    "release-if-change": "lerna publish from-package",
+    "release": "lerna publish",
     "dag": "yarn workspace @dags/dag",
     "uid-counter": "yarn workspace @dags/uid-counter",
     "uid-uuid": "yarn workspace @dags/uid-uuid"
