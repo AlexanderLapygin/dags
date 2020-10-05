@@ -36,6 +36,7 @@
         "dist"
     ],
     "keywords": [
+        "counter",
         "typescript",
         "uid"
     ],

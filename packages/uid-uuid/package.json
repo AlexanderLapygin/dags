@@ -41,7 +41,8 @@
   ],
   "keywords": [
     "typescript",
-    "uid"
+    "uid",
+    "uuid"
   ],
   "publishConfig": {
     "access": "public"
