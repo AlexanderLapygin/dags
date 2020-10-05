@@ -1,3 +1,3 @@
 # Welcome to DAGs
 
-This is the core module for dags monorepo.
+This is the core module of dags monorepo.

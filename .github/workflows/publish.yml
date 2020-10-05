@@ -53,6 +53,6 @@ jobs:
           git config --global user.name "alexanderlapygin"
 
       - name: Publish new versions
-        run: yarn release-if-change -y
+        run: yarn release:changed -y
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
