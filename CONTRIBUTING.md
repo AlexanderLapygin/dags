@@ -16,6 +16,7 @@ guidelines that should help you as you prepare your contribution.
   - [Tooling](#tooling)
   - [Commands](#commands)
     - [Package Aliasing and Yarn Workspace](#package-aliasing-and-yarn-workspace)
+- [Want to help with something?](#want-to-help-with-something)    
 - [Think you found a bug?](#think-you-found-a-bug)
 - [Proposing something new?](#proposing-something-new)
 - [Making a Pull Request?](#making-a-pull-request)
@@ -105,6 +106,10 @@ yarn dag lint
 
 This alias is particularly useful when you're working on a specific component and want to avoid running the command for
 all components.
+
+## Want to help with something?
+
+TBD - about issues
 
 ## Think you found a bug?
 
