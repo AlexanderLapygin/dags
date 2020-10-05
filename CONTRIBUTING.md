@@ -68,7 +68,7 @@ components.
 
 **`yarn test`**: run test for all component packages
 
-**`yarn versionup-then-release-in-ci`**: bump the version of the changed packages and then publish them 
+**`yarn versionup-then-release-by-ci`**: bump the version of the changed packages and then publish them 
 
 **`yarn [package] <cmd>`**: Run a command on the specific package you're working on. You can run `build`, `test`,
 `lint` commands
@@ -170,7 +170,7 @@ On each push in `master` branch CI creates the releases of the changed public mo
 
 ### Publishing details
 
-The versions of the changed public modules are published by the `versionup-then-release-in-ci` command. When it is
+The versions of the changed public modules are published by the `versionup-then-release-by-ci` command. When it is
 executed, Lerna bumps the versions of the changed packages, push them to github, after which CI in its turn creates the
 releases and publishes them to NPM.
 
