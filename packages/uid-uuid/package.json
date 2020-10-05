@@ -1,6 +1,6 @@
 {
   "name": "@dags/uid-uuid",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Abstract unique identifier",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,7 @@
     "uuid": "^8.3.1"
   },
   "devDependencies": {
-    "@dags/dag": "^0.2.9"
+    "@dags/dag": "^0.2.10"
   },
   "peerDependencies": {
     "@dags/dag": "0.x"
