@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Graphs",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -35,7 +35,7 @@
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@dags/dag": "^0.2.10"
+    "@dags/dag": "^0.2.11"
   },
   "keywords": [
     "data structure",
