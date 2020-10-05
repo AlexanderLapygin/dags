@@ -31,7 +31,6 @@
     ],
     "keywords": [
         "data structure",
-        "directed graph",
         "dag",
         "graph",
         "typescript"

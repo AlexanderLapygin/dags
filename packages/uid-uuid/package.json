@@ -40,9 +40,8 @@
     "dist"
   ],
   "keywords": [
-    "data structure",
-    "graph",
-    "typescript"
+    "typescript",
+    "uid"
   ],
   "publishConfig": {
     "access": "public"
