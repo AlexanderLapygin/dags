@@ -228,7 +228,7 @@ describe('Dag with UIDMock', () => {
     let node: UID;
     let son: UID;
     let grandson: UID;
-
+    
     beforeEach(function() {
       node = dag.newNode();
       son = dag.newNode();
