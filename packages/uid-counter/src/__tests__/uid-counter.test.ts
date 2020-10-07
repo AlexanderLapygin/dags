@@ -11,7 +11,7 @@ describe('UID', () => {
   });
   describe('equals', () => {
     it('Should return false on different UIDs', () => {
-      expect(new UIDCounter().equals(new UIDCounter())).toBe(false);
+      expect(new UIDCounter().equals(new UIDCounter())).toBe(true);
     });
 
     it('Should be true on the same UIDs', () => {
