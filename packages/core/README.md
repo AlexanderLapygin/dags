@@ -28,9 +28,9 @@ For example, you can use the `dag` module like this:
 ```ts
 import { Dag } from '@dags/dag'
 
-  const dag = new Dag();
+const dag = new Dag();
 
-  const parent = dag.newNode();
-  const child = dag.newNode();
-  dag.setParenthood(child, parent);
+const parent = dag.newNode();
+const child = dag.newNode();
+dag.setParenthood(child, parent);
 ```
