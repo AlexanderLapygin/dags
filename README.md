@@ -6,3 +6,9 @@ A library that implements a Directed Acyclic Graph (DAG) and some related functi
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
 [![Issues](https://img.shields.io/github/issues/AlexanderLapygin/dags?style=plastic)](https://github.com/AlexanderLapygin/dags/issues)
 [![License](https://img.shields.io/github/license/AlexanderLapygin/dags?style=plastic)](https://github.com/AlexanderLapygin/dags/blob/master/LICENSE)
+
+https://img.shields.io/npm/dy/AlexanderLapygin/dags?style=plastic
+
+[![Downloads](https://img.shields.io/npm/dy/AlexanderLapygin/dags?style=plastic)]()
+
+https://img.shields.io/npm/dy/AlexanderLapygin/dags?style=plastic
