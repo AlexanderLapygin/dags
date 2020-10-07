@@ -11,6 +11,7 @@ A library that implements a Directed Acyclic Graph (DAG) and some related functi
 <a href="https://github.com/AlexanderLapygin/dags/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/AlexanderLapygin/dags"></a>
 <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@dags/core"/>
 <img alt="MIT License" src="https://img.shields.io/github/license/alexanderlapygin/dags"/>
+<a href="https://github.com/AlexanderLapygin/dags/blob/master/LICENSEk"><img alt="MIT License" src="https://img.shields.io/github/license/AlexanderLapygin/dags"></a>
 </p>
 <br />
 
