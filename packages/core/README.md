@@ -26,7 +26,7 @@ At the moment, the library exposes such modules:
 For example, you can use the `dag` module like this:
 
 ```ts
-import { Dag } from '@dags/dag'
+import { Dag, UUID } from '@dags/core'
 
 const dag = new Dag(new UUID());
 
