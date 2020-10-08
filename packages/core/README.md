@@ -28,7 +28,7 @@ For example, you can use the `dag` module like this:
 ```ts
 import { Dag } from '@dags/dag'
 
-const dag = new Dag();
+const dag = new Dag(new UUID());
 
 const parent = dag.newNode();
 const child = dag.newNode();
