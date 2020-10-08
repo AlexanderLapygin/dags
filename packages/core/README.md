@@ -19,9 +19,9 @@ $ npm install @dags/core
 
 At the moment, the library exposes such modules:
 
-- *dag*
-- *uid-counter*
-- *uid-uuid*
+- `dag`
+- `uid-counter`
+- `uid-uuid`
 
 For example, you can use the `dag` module like this:
 
