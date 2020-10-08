@@ -35,7 +35,9 @@
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@dags/dag": "^0.2.12"
+    "@dags/dag": "^0.2.12",
+    "@dags/uid-counter": "^0.2.13",
+    "@dags/uid-uuid": "^0.2.13"
   },
   "keywords": [
     "data structure",

@@ -1,0 +1,19 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "Examples for the DAGs",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean && tsc index.ts",
+    "clean": "rimraf node_modules index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@dags/core": "^0.1.13"
+  },
+  "keywords": [
+    "dag",
+    "examples",
+    "typescript"
+  ]
+}
