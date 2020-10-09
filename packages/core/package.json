@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "description": "Graphs",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@dags/dag": "^0.2.12",
-    "@dags/uid-counter": "^0.2.13",
-    "@dags/uid-uuid": "^0.2.13"
+    "@dags/uid-counter": "^0.2.14",
+    "@dags/uid-uuid": "^0.2.14"
   },
   "keywords": [
     "data structure",

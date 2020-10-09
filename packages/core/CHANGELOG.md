@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.1.13...@dags/core@0.2.0) (2020-10-09)
+
+
+### Features
+
+* add examples package ([d9ee841](https://github.com/AlexanderLapygin/dags/commit/d9ee841f06f4b3533425020c2902b3a5a5d05ea0))
+
+
+
+
+
+
 ## [0.1.13](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.1.12...@dags/core@0.1.13) (2020-10-05)
 
 **Note:** Version bump only for package @dags/core
