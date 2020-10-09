@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn clean && tsc index.ts",
-    "clean": "rimraf node_modules index.js",
+    "clean": "rimraf yarn.lock node_modules index.js",
     "start": "node index.js"
   },
   "dependencies": {
