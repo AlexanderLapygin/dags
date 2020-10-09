@@ -6,11 +6,11 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn clean && tsc index.ts",
-    "clean": "rimraf yarn.lock node_modules index.js",
+    "clean": "rimraf yarn.lock index.js",
     "start": "node index.js"
   },
   "dependencies": {
-    "@dags/core": "^0.1.13"
+    "@dags/core": "^0.2"
   },
   "keywords": [
     "dag",
