@@ -9,7 +9,7 @@
     "publish": {
       "conventionalCommits": true,
       "ignoreChanges": [
-        "**/examples/**",
+        "**/example/**",
         "**/__fixtures__/**",
         "**/__tests__/**",
         "**/*.md"

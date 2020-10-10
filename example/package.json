@@ -1,8 +1,8 @@
 {
-  "name": "examples",
+  "name": "example",
   "private": true,
   "version": "1.0.0",
-  "description": "Examples for the DAGs",
+  "description": "Example for the DAGs",
   "license": "MIT",
   "scripts": {
     "build": "tsc index.ts",
@@ -17,7 +17,7 @@
   },
   "keywords": [
     "dag",
-    "examples",
+    "example",
     "typescript"
   ]
 }
