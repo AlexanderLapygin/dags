@@ -1,6 +1,6 @@
 # DAGs
 
-A library that implements a **Directed Acyclic Graph** (DAG) and some related functionality.
+A library that implements a **Directed Acyclic Graph** and some related functionality.
 
 <br>
   <p align="center">
