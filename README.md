@@ -4,6 +4,7 @@ A library that implements a **Directed Acyclic Graph** (DAG) and some related fu
 
 <br>
   <p align="center">
+    <a href="https://www.npmjs.com/package/@dags/core"><img alt="NPM module version" src="https://img.shields.io/npm/v/@dags/core"></a>  
     <a href="https://github.com/AlexanderLapygin/dags/actions?query=workflow%3Aci"><img alt="CI status" src="https://github.com/alexanderlapygin/dags/workflows/CI/badge.svg"></a>
     <a href="https://github.com/AlexanderLapygin/dags/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/AlexanderLapygin/dags"></a>  
     <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@dags/core.svg?style=flat"/>
