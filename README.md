@@ -5,6 +5,7 @@ A library that implements a Directed Acyclic Graph (DAG) and some related functi
 <br>
   <p align="center">
     <a href="https://github.com/AlexanderLapygin/dags/actions?query=workflow%3Aunit-tests"><img alt="Unit Testing status" src="https://github.com/AlexanderLapygin/dags/workflows/unit-tests/badge.svg"></a>
+    <img alt="Build status" src="https://github.com/alexanderlapygin/dags/workflows/CI/badge.svg"/>
     <a href="https://github.com/AlexanderLapygin/dags/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/AlexanderLapygin/dags"></a>  
     <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@dags/core.svg?style=flat"/>
     <a href="https://github.com/AlexanderLapygin/dags/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/AlexanderLapygin/dags"></a>  
