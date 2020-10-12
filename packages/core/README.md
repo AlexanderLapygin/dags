@@ -8,8 +8,6 @@ This is the core module of the dags monorepo.
     <a href="https://github.com/AlexanderLapygin/dags/actions?query=workflow%3Aci"><img alt="CI status" src="https://github.com/alexanderlapygin/dags/workflows/CI/badge.svg"></a>
     <a href="https://github.com/AlexanderLapygin/dags/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/AlexanderLapygin/dags"></a>  
     <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@dags/core.svg?style=flat"/>
-    <a href="https://github.com/AlexanderLapygin/dags/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/AlexanderLapygin/dags"></a>  
-    <a href="https://github.com/AlexanderLapygin/dags/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/AlexanderLapygin/dags"></a>
     <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@dags/core"/>
     <a href="https://github.com/AlexanderLapygin/dags/blob/master/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/AlexanderLapygin/dags"></a>
   </p>
