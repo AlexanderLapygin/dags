@@ -13,7 +13,7 @@ A library that implements a **Directed Acyclic Graph** and some related function
   </p>
 <br />
 
-## Installing DAGs
+## Installing
 
 To use DAG modules, all you need to do is install the `@dags/core` package:
 
