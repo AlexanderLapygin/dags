@@ -34,7 +34,7 @@ At the moment, the library exposes such modules:
 - `uid-counter`
 - `uid-uuid`
 
-For example, you can use the `dag` module like this:
+For example, you can use the `dag` module in semi-procedural style like this:
 
 ```ts
 import { Dag, UUID } from '@dags/core'
