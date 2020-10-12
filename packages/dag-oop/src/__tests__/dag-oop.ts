@@ -1,33 +1,17 @@
-import { DagOop } from '../dag-oop';
-import { Dag, UID } from '@dags/dag';
-
-export class UIDMock implements UID {
-  private static _counter = 0;
-  private readonly _id: number;
-
-  constructor() {
-    this._id = UIDMock._counter++;
-  }
-
-  newUID(): UID {
-    return new UIDMock();
-  }
-
-  equals(uid: UID): boolean {
-    return uid instanceof UIDMock && this._id === uid._id;
-  }
-}
+import { DagOopImpl } from '../dag-oop-impl';
+import { UID } from '@dags/dag';
+import { UIDMock } from './uid-mock';
 
 describe('Dag with UIDMock', () => {
-  let dag: DagOop<UID>;
+  let dag: DagOopImpl<UID>;
 
   beforeEach(function() {
-    dag = new DagOop(new UIDMock());
+    dag = new DagOopImpl(new UIDMock());
   })
 
   describe("constructor", () => {
     it("Should execute without any problem", () => {
-      expect(() => new DagOop(new UIDMock())).not.toThrow();
+      expect(() => new DagOopImpl(new UIDMock())).not.toThrow();
     })
     it("Should return an empty nodeset", () => {
       expect(dag.getNodes().size).toBe(0);

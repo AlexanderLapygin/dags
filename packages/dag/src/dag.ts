@@ -44,16 +44,16 @@ export class Dag<T extends UID> {
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
-   * @param dagUID uid of this dag
+   * @param dagId uid of this dag
    */
-  constructor(private dagUID: T) {}
+  constructor(private dagId: T) {}
 
   /**
    * Generate a new uid
    * @return some new uid.
    */
   newUID(): T {
-    return this.dagUID.newUID();
+    return this.dagId.newUID();
   }
 
   /**

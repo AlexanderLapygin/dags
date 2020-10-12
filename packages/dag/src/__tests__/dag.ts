@@ -1,21 +1,5 @@
 import { Dag, UID } from '../dag';
-
-export class UIDMock implements UID {
-  private static _counter = 0;
-  private readonly _id: number;
-
-  constructor() {
-    this._id = UIDMock._counter++;
-  }
-
-  newUID(): UID {
-    return new UIDMock();
-  }
-
-  equals(uid: UID): boolean {
-    return uid instanceof UIDMock && this._id === uid._id;
-  }
-}
+import { UIDMock } from './uid-mock';
 
 describe('Dag with UIDMock', () => {
   let dag: Dag<UID>;
@@ -228,7 +212,7 @@ describe('Dag with UIDMock', () => {
     let node: UID;
     let son: UID;
     let grandson: UID;
-    
+
     beforeEach(function() {
       node = dag.newNode();
       son = dag.newNode();
