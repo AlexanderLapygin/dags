@@ -5,6 +5,7 @@ export interface UID {
   /**
    * Generate new UID
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   newUID(): any
 
   /**
@@ -99,6 +100,7 @@ export class Dag<T extends UID> {
   getParents(node: T): Set<T> {
     if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this._parentMap.get(node)!
   }
 
@@ -110,6 +112,7 @@ export class Dag<T extends UID> {
   getChildren(node: T): Set<T> {
     if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this._childMap.get(node)!
   }
 
