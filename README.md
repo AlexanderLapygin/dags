@@ -1,6 +1,6 @@
 # DAGs
 
-A library that implements a **Directed Acyclic Graph** and some related functionality.
+A library that implements a **Directed Acyclic Graph** and some related functionality
 
 <br>
   <p align="center">
@@ -38,12 +38,13 @@ For example, you can use the `dag` module in semi-procedural style like this:
 ```ts
 import { Dag, UUID } from '@dags/core'
 
-const dag = new Dag(new UUID());
+const dag = new Dag(new UUID())
 
-const parent = dag.newNode();
-const child = dag.newNode();
-dag.setParenthood(child, parent);
+const parent = dag.newNode()
+const child = dag.newNode()
+dag.setParenthood(child, parent)
 ```
+
 ## License
 
 MIT © [Alexander Lapygin](https://github.com/AlexanderLapygin)
