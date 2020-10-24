@@ -12,8 +12,7 @@
         "**/example/**",
         "**/__fixtures__/**",
         "**/__tests__/**",
-        "**/*.md",
-        "**/.gitattributes"
+        "**/*.md"
       ],
       "allowBranch": "master"
     }
