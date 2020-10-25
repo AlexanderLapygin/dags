@@ -38,9 +38,9 @@ For example, you can use the `dag` module like this:
 ```ts
 import { Dag, UUID } from '@dags/core'
 
-const dag = new Dag(new UUID());
+const dag = new Dag(UUID)
 
-const parent = dag.newNode();
-const child = dag.newNode();
-dag.setParenthood(child, parent);
+const parent = dag.newNode()
+const child = dag.newNode()
+dag.setParenthood(child, parent)
 ```
