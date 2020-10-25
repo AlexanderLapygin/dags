@@ -45,15 +45,6 @@ describe('Dag with UIDMock', () => {
     })
   })
 
-  describe('newUID', () => {
-    it("Should return a value of type 'object'", () => {
-      expect(typeof dag.newUID()).toBe('object')
-    })
-    it('Should return a unique value', () => {
-      expect(dag.newUID() == dag.newUID()).not.toBe(true)
-    })
-  })
-
   describe('newNode', () => {
     it('Should increase a nodeset size', () => {
       dag.newNode()
@@ -123,7 +114,9 @@ describe('Dag with UIDMock', () => {
       expect(dag.getParents(current)).not.toContain(parent)
     })
     it('Should throw an error in case of orphan given node', () => {
-      expect(() => dag.getParents(dag.newUID())).toThrowError("node doesn't belong to this graph")
+      expect(() => {
+        return dag.getParents(new dag.uid())
+      }).toThrowError("node doesn't belong to this graph")
     })
   })
 
@@ -136,15 +129,15 @@ describe('Dag with UIDMock', () => {
     })
 
     it('Should throw an error in case of both orphan UIDs', () => {
-      expect(() => dag.setParenthood(dag.newUID(), dag.newUID())).toThrowError()
+      expect(() => dag.setParenthood(new dag.uid(), new dag.uid())).toThrowError()
     })
     it('Should throw an Error in case of orphan currentNode', () => {
-      expect(() => dag.setParenthood(dag.newUID(), parent)).toThrowError(
+      expect(() => dag.setParenthood(new dag.uid(), parent)).toThrowError(
         "Child node doesn't belong to this graph"
       )
     })
     it('Should throw an Error in case of orphan parent', () => {
-      expect(() => dag.setParenthood(child, dag.newUID())).toThrowError(
+      expect(() => dag.setParenthood(child, new dag.uid())).toThrowError(
         "Parent node doesn't belong to this graph"
       )
     })
@@ -192,15 +185,15 @@ describe('Dag with UIDMock', () => {
     })
 
     it('Should throw an error in case of both orphan UIDs', () => {
-      expect(() => dag.removeParenthood(dag.newUID(), dag.newUID())).toThrowError()
+      expect(() => dag.removeParenthood(new dag.uid(), new dag.uid())).toThrowError()
     })
     it('Should throw an Error in case of orphan currentNode', () => {
-      expect(() => dag.removeParenthood(dag.newUID(), parent)).toThrowError(
+      expect(() => dag.removeParenthood(new dag.uid(), parent)).toThrowError(
         "Child node doesn't belong to this graph"
       )
     })
     it('Should throw an Error in case of orphan parent', () => {
-      expect(() => dag.removeParenthood(child, dag.newUID())).toThrowError(
+      expect(() => dag.removeParenthood(child, new dag.uid())).toThrowError(
         "Parent node doesn't belong to this graph"
       )
     })
@@ -234,7 +227,7 @@ describe('Dag with UIDMock', () => {
       expect(dag.getChildren(current)).not.toContain(child)
     })
     it('Should throw an error in case of orphan given node', () => {
-      expect(() => dag.getChildren(dag.newUID())).toThrowError("node doesn't belong to this graph")
+      expect(() => dag.getChildren(new dag.uid())).toThrowError("node doesn't belong to this graph")
     })
   })
 

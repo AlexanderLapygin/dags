@@ -10,12 +10,6 @@ export interface UIDConstructor {
  */
 export interface UID {
   /**
-   * Generate new UID
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  newUID(): any
-
-  /**
    * Check equality to the given UID
    * @param uid
    */
@@ -51,24 +45,16 @@ export class Dag {
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
-   * @param uidConstructor constructor for UIDs
+   * @param uid constructor for UIDs
    */
-  constructor(private uidConstructor: UIDConstructor) {}
-
-  /**
-   * Generate a new uid
-   * @return some new uid.
-   */
-  newUID(): UID {
-    return new this.uidConstructor()
-  }
+  constructor(public uid: UIDConstructor) {}
 
   /**
    * Create new node of this graph.
    * @return {UID} uid of the new node
    */
   newNode(): UID {
-    const nodeUID: UID = this.newUID()
+    const nodeUID: UID = new this.uid()
     this._nodes.add(nodeUID)
     this._parentMap.set(nodeUID, new Set<UID>())
     this._childMap.set(nodeUID, new Set<UID>())
