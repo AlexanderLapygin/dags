@@ -20,15 +20,15 @@ export class UIDMock implements UID {
 }
 
 describe('Dag with UIDMock', () => {
-  let dag: Dag<UID>
+  let dag: Dag
 
   beforeEach(function () {
-    dag = new Dag(new UIDMock())
+    dag = new Dag(UIDMock)
   })
 
   describe('constructor', () => {
     it('Should execute without any problem', () => {
-      expect(() => new Dag(new UIDMock())).not.toThrow()
+      expect(() => new Dag(UIDMock)).not.toThrow()
     })
     it('Should return an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)
