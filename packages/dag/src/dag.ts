@@ -16,7 +16,7 @@ export interface UID {
 }
 
 /**
- * Provides DAG - Directed Acyclic Graph functionality.
+ * Provides DAG - Directed Acyclic Graph functionality
  */
 export class Dag<T extends UID> {
   /**
