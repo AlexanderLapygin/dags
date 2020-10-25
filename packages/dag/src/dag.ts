@@ -1,13 +1,14 @@
 /**
+ * Required interface of the UID Constructor
+ */
+export interface UIDConstructor {
+  new (): UID
+}
+
+/**
  * Required interface of the Dag
  */
 export interface UID {
-  /**
-   * Generate new UID
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  newUID(): any
-
   /**
    * Check equality to the given UID
    * @param uid
@@ -18,53 +19,45 @@ export interface UID {
 /**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
-export class Dag<T extends UID> {
+export class Dag {
   /**
    * Set of nodes of the graph
    * @type {Set}
    * @private
    */
-  private _nodes = new Set<T>()
+  private _nodes = new Set<UID>()
 
   /**
    * Map of nodes to their children.
    * @type {Map}
    * @private
    */
-  private _childMap = new Map<T, Set<T>>()
+  private _childMap = new Map<UID, Set<UID>>()
 
   /**
    * Map of nodes to their parents.
    * @type {Map}
    * @private
    */
-  private _parentMap = new Map<T, Set<T>>()
+  private _parentMap = new Map<UID, Set<UID>>()
 
   /**
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
-   * @param dagUID uid of this dag
+   * @param uid constructor for UIDs
    */
-  constructor(private dagUID: T) {}
-
-  /**
-   * Generate a new uid
-   * @return some new uid.
-   */
-  newUID(): T {
-    return this.dagUID.newUID()
-  }
+  constructor(public uid: UIDConstructor) {}
 
   /**
    * Create new node of this graph.
    * @return {UID} uid of the new node
    */
-  newNode(): T {
-    const nodeUID: T = this.newUID()
+  newNode(): UID {
+    const nodeUID: UID = new this.uid()
     this._nodes.add(nodeUID)
-    this._parentMap.set(nodeUID, new Set<T>())
-    this._childMap.set(nodeUID, new Set<T>())
+    this._parentMap.set(nodeUID, new Set<UID>())
+    this._childMap.set(nodeUID, new Set<UID>())
     return nodeUID
   }
 
@@ -73,7 +66,7 @@ export class Dag<T extends UID> {
    * @return {Dag} this graph.
    * @param node
    */
-  deleteNode(node: T): Dag<T> {
+  deleteNode(node: UID): Dag {
     for (const parent of this.getParents(node)) {
       this.removeParenthood(node, parent)
     }
@@ -88,7 +81,7 @@ export class Dag<T extends UID> {
   /**
    * @return nodeset of this dag
    */
-  getNodes(): Set<T> {
+  getNodes(): Set<UID> {
     return this._nodes
   }
 
@@ -97,7 +90,7 @@ export class Dag<T extends UID> {
    * @param node
    * @return parents of the given node.
    */
-  getParents(node: T): Set<T> {
+  getParents(node: UID): Set<UID> {
     if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -109,7 +102,7 @@ export class Dag<T extends UID> {
    * @param node
    * @return children of the given node.
    */
-  getChildren(node: T): Set<T> {
+  getChildren(node: UID): Set<UID> {
     if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -120,7 +113,7 @@ export class Dag<T extends UID> {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {Dag} this dag
    */
-  setParenthood(child: T, parent: T): Dag<T> {
+  setParenthood(child: UID, parent: UID): Dag {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 
@@ -135,9 +128,9 @@ export class Dag<T extends UID> {
   /**
    * Remove parent node from the given node and implicitly remove the given node.
    * from the parent node as a child.
-   * @return {Dag<T>>} this dag
+   * @return {Dag} this dag
    */
-  removeParenthood(child: T, parent: T): Dag<T> {
+  removeParenthood(child: UID, parent: UID): Dag {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 
@@ -152,7 +145,7 @@ export class Dag<T extends UID> {
    * @param current current node.
    * @param tested tested node.
    */
-  isDescendant(current: T, tested: T) {
+  isDescendant(current: UID, tested: UID) {
     if (current.equals(tested)) return true
 
     for (const child of this.getChildren(current))
@@ -163,7 +156,7 @@ export class Dag<T extends UID> {
     return false
   }
 
-  private checkCycle(child: T, parent: T) {
+  private checkCycle(child: UID, parent: UID) {
     if (this.isDescendant(child, parent))
       throw new Error(
         'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
