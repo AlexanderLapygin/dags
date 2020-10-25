@@ -1,0 +1,37 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Code
+*.css           text diff=css
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.ts            text
+
+# Documents
+*.md            text
+*.pdf           binary
+
+# Configuration/Serialization
+*.json          text
+*.yaml          text
+*.yml           text
+*.properties    text
+
+# Graphics
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.ico      binary
+# SVG treated as an asset
+ *.svg    binary
+# If you want to treat it as text,
+# use the following line instead.
+# *.svg      text
+
+# To exclude from language statistics, prevent diff and merge
+package-lock.json   -diff -merge
+package-lock.json   linguist-generated=true
+yarn.lock           -diff -merge
+yarn.lock           linguist-generated=true

@@ -1,11 +1,19 @@
 {
   "files": [
     {
-      "path": "packages/hooks/dist/esm/*.js",
+      "path": "packages/core/dist/esm/*.js",
       "maxSize": "5 kB"
     },
     {
-      "path": "packages/datepicker/dist/esm/*.js",
+      "path": "packages/dag/dist/esm/*.js",
+      "maxSize": "5 kB"
+    },
+    {
+      "path": "packages/uid-counter/dist/esm/*.js",
+      "maxSize": "5 kB"
+    },
+    {
+      "path": "packages/uid-uuid/dist/esm/*.js",
       "maxSize": "5 kB"
     }
   ]
