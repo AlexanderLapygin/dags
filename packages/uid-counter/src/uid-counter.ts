@@ -13,10 +13,6 @@ export class UIDCounter implements UID {
     this._id = UIDCounter._counter++
   }
 
-  newUID(): UID {
-    return new UIDCounter()
-  }
-
   equals(uid: UID): boolean {
     return uid instanceof UIDCounter && this._id === uid._id
   }

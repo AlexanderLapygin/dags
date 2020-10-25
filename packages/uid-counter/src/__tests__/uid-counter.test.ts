@@ -20,13 +20,4 @@ describe('UID', () => {
       expect(uid1.equals(uid2)).toBe(true)
     })
   })
-  describe('newUID', () => {
-    const uid = new UIDCounter()
-    it('Should return unique ids', () => {
-      expect(uid.newUID() == uid.newUID()).toBe(false)
-    })
-    it("Should return a value of type 'object'", () => {
-      expect(typeof uid.newUID()).toBe('object')
-    })
-  })
 })
