@@ -2,29 +2,29 @@
 # yarn lockfile v1
 
 
-"@dags/core@^0.2":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@dags/core/-/core-0.2.0.tgz#6e230c01cea65a098b5dbe364c850531ba442c31"
-  integrity sha512-UL8aNmLnmPZJstG8czYWKqdhbDFmdtaKNNFWHnFbIfT0ASQJalop/RFwoT8CXgUoJ17OOJqTYhuokhm/bfHv0w==
+"@dags/core@^0.3":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@dags/core/-/core-0.3.0.tgz#50085a9f00857654052d388ff18e0888b3a58b6b"
+  integrity sha512-SEzwVGmDDaGcM7hVBsJB+oizmhbxyoE6Y6SBmuCUnjZgPS5bIsVc/cttwA9MxVAsKLSa9AEmK/ggm/+Q/MBR1A==
   dependencies:
-    "@dags/dag" "^0.2.12"
-    "@dags/uid-counter" "^0.2.14"
-    "@dags/uid-uuid" "^0.2.14"
+    "@dags/dag" "^0.x"
+    "@dags/uid-counter" "^0.x"
+    "@dags/uid-uuid" "^0.x"
 
-"@dags/dag@^0.2.12":
-  version "0.2.12"
-  resolved "https://registry.npmjs.org/@dags/dag/-/dag-0.2.12.tgz#3a942b6755989dc6e1cac096c0ad3b47d01b3853"
-  integrity sha512-maW0g8AR+mUH4OnNPgvvGJnHMHDTrO75rR0feT3OgD/Vf0Px3jNATADFQLQGxmvZkFSMskDuWAu5MS8x/dpS7A==
+"@dags/dag@^0.x":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@dags/dag/-/dag-0.3.0.tgz#e3f6cea20afd207e97010948401e8b269d176532"
+  integrity sha512-ONh3pQAa7naD5tDC9mqOyMMPXoetQFVwc1gvDlii8oxlAqBjeNC1UVKfiztHcUAsX7qyEq15y3ttHt1lZVJr3A==
 
-"@dags/uid-counter@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npmjs.org/@dags/uid-counter/-/uid-counter-0.2.14.tgz#32b42577ee6127c8b9dd56dd4b51a7c016d93002"
-  integrity sha512-GU96QTN/xUfT2bleDEIltprerFyUN2fag97DcMDfl4hlfEYy982aztkS1jyzinuaE6kmOnr0lrtVwmMttArb9g==
+"@dags/uid-counter@^0.x":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@dags/uid-counter/-/uid-counter-0.3.0.tgz#a4f218dafd86b40ed86d5275947088164c51d6f0"
+  integrity sha512-gW2FbyC7S6Q7ZmIO2txxh19AxA8a0JdysUwxDrox/R6ME8yRYNGvmB/ToMT2lskuGFBdSAakn52x9o2RzqmEDw==
 
-"@dags/uid-uuid@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npmjs.org/@dags/uid-uuid/-/uid-uuid-0.2.14.tgz#b7451c5c2d99fee5fc8eaabec1551ef28f94608d"
-  integrity sha512-ZvHhZRllBZo2BEmYiHZtAhut/YWiney9Z5UsCktICSM8SymiOwWk0cYoNYuOpVjOzgJ8KKtSaI8bc04x+iruzQ==
+"@dags/uid-uuid@^0.x":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@dags/uid-uuid/-/uid-uuid-0.3.0.tgz#995e23ffcde95e002cd547adc65489ed31839d6e"
+  integrity sha512-YzFssFX2rApMhykBbVYBdLRIewBFLhBKljXW3KkindgnSj/dWHigb8ht1e0Ul653GVuL3wg/srurF3DYqO4bmw==
   dependencies:
     "@types/uuid" "^8.3.0"
     uuid "^8.3.1"
