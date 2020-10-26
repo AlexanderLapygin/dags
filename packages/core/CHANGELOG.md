@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.2.0...@dags/core@0.4.0) (2020-10-26)
+
+
+### Bug Fixes
+
+* harmonize readme of core ([f163039](https://github.com/AlexanderLapygin/dags/commit/f163039f5b162fe7ea7abe8878fb80ba70d1c6fe))
+* harmonize readme of core ([751128a](https://github.com/AlexanderLapygin/dags/commit/751128a81de88e8bfe4333f5e2a7595c8143e03f))
+* harmonize readme of core ([e2a172f](https://github.com/AlexanderLapygin/dags/commit/e2a172f12519e293fae24f3b3cc5e1ce5f6a7bf1))
+
+
+### Features
+
+* expand dependency range in core ([e5729e5](https://github.com/AlexanderLapygin/dags/commit/e5729e5b21af956141d460c228c8294c73eca9c1))
+* remove newUID methods from uid-uuid and uid-counter ([50e90c7](https://github.com/AlexanderLapygin/dags/commit/50e90c77fd88e44870b36e675875bbfa42c8811e))
+
+
+
+
+
+
 # [0.2.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.1.13...@dags/core@0.2.0) (2020-10-09)
 
 

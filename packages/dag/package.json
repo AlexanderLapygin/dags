@@ -1,6 +1,6 @@
 {
   "name": "@dags/dag",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Core DAG code",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

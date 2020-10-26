@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-counter@0.2.14...@dags/uid-counter@0.4.0) (2020-10-26)
+
+
+### Features
+
+* bump uid-uuid and uid-counter versions ([aa2026f](https://github.com/AlexanderLapygin/dags/commit/aa2026f360b758025929cb7184d71c68c719c76f))
+* expand dependency range ([f5dc0c5](https://github.com/AlexanderLapygin/dags/commit/f5dc0c5e18d052eae5f5ef952472ec0f2ae5dfc5))
+* remove newUID methods from uid-uuid and uid-counter ([50e90c7](https://github.com/AlexanderLapygin/dags/commit/50e90c77fd88e44870b36e675875bbfa42c8811e))
+
+
+
+
+
+
 ## [0.2.14](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-counter@0.2.13...@dags/uid-counter@0.2.14) (2020-10-09)
 
 **Note:** Version bump only for package @dags/uid-counter

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/AlexanderLapygin/dags/compare/@dags/dag@0.2.12...@dags/dag@0.4.0) (2020-10-26)
+
+
+### Features
+
+* reimplement according to constructor interface ([49b2418](https://github.com/AlexanderLapygin/dags/commit/49b2418e12f4813c43bd5534b5560512ac5cc148))
+* remove newUID method of Dag ([d68c45b](https://github.com/AlexanderLapygin/dags/commit/d68c45b00c7601b40cc661202e3d2a30af8b768b))
+* remove newUID methods from uid-uuid and uid-counter ([50e90c7](https://github.com/AlexanderLapygin/dags/commit/50e90c77fd88e44870b36e675875bbfa42c8811e))
+
+
+
+
+
+
 ## [0.2.12](https://github.com/AlexanderLapygin/dags/compare/@dags/dag@0.2.11...@dags/dag@0.2.12) (2020-10-05)
 
 **Note:** Version bump only for package @dags/dag
