@@ -8,8 +8,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* harmonize readme of core ([f163039](https://github.com/AlexanderLapygin/dags/commit/f163039f5b162fe7ea7abe8878fb80ba70d1c6fe))
-* harmonize readme of core ([751128a](https://github.com/AlexanderLapygin/dags/commit/751128a81de88e8bfe4333f5e2a7595c8143e03f))
 * harmonize readme of core ([e2a172f](https://github.com/AlexanderLapygin/dags/commit/e2a172f12519e293fae24f3b3cc5e1ce5f6a7bf1))
 
 
