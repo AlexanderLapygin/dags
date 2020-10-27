@@ -1,8 +1,8 @@
 {
-  "name": "dag-example",
+  "name": "uid-counter-example",
   "private": true,
   "version": "1.0.0",
-  "description": "Example for the DAGs",
+  "description": "uid-counter example",
   "license": "MIT",
   "scripts": {
     "build": "tsc index.ts",
@@ -16,7 +16,7 @@
     "@types/node": "^14.0.26"
   },
   "keywords": [
-    "dag",
+    "uuid",
     "example",
     "typescript"
   ]
