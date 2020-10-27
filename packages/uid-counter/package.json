@@ -1,7 +1,7 @@
 {
   "name": "@dags/uid-counter",
   "version": "0.4.1",
-  "description": "Abstract unique identifier",
+  "description": "UID that is implemented as counter",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
