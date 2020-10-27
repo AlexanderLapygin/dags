@@ -27,7 +27,7 @@ $ npm install @dags/core
 
 ## Usage
 
-At the moment, the library exposes such modules:
+At the moment, the library provides the following modules:
 
 - `dag`
 - `uid-counter`
