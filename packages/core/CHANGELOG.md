@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.4.1...@dags/core@0.4.2) (2020-10-27)
+
+**Note:** Version bump only for package @dags/core
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [0.4.1](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.4.0...@dags/core@0.4.1) (2020-10-27)
 
 ### Bug Fixes

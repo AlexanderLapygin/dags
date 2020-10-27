@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-uuid@0.4.1...@dags/uid-uuid@0.4.2) (2020-10-27)
+
+### Bug Fixes
+
+- renaming of modules
+  ([b4ca1a9](https://github.com/AlexanderLapygin/dags/commit/b4ca1a96525edd8c366dcd0bf7d468c60c7dc0ca))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [0.4.1](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-uuid@0.4.0...@dags/uid-uuid@0.4.1) (2020-10-27)
 
 ### Bug Fixes
