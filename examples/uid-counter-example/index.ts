@@ -1,8 +1,8 @@
 import { UIDCounter } from '@dags/core'
 
-const uuid1 = new UIDCounter()
-const uuid2 = new UIDCounter()
+const uid1 = new UIDCounter()
+const uid2 = new UIDCounter()
 
-console.log(uuid1)
-console.log(uuid2)
-console.log(uuid1.equals(uuid2))
+console.log(uid1)
+console.log(uid2)
+console.log(uid1.equals(uid2))
