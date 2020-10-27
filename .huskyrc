@@ -1,7 +1,6 @@
 {
   "hooks": {
-    "commit-msg-backup": "commitlint -E HUSKY_GIT_PARAMS",
-    "commit-msg": "echo commit-msg git hook are awesome!",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "pre-commit_backup": "lint-staged",
     "pre-commit": "echo git hooks are awesome!"
   }
