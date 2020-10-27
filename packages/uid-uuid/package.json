@@ -1,6 +1,6 @@
 {
   "name": "@dags/uid-uuid",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "UID that is implemented as counter",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -32,7 +32,7 @@
     "uuid": "^8.3.1"
   },
   "devDependencies": {
-    "@dags/dag": "^0.4.0"
+    "@dags/dag": "^0.4.1"
   },
   "peerDependencies": {
     "@dags/dag": "0.x"

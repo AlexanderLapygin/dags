@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Core module of the dags monorepo",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -35,9 +35,9 @@
     "test:cov": "yarn test --coverage"
   },
   "dependencies": {
-    "@dags/dag": "^0.4.0",
-    "@dags/uid-counter": "^0.4.0",
-    "@dags/uid-uuid": "^0.4.0"
+    "@dags/dag": "^0.4.1",
+    "@dags/uid-counter": "^0.4.1",
+    "@dags/uid-uuid": "^0.4.1"
   },
   "keywords": [
     "data structure",
