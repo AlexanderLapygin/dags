@@ -28,7 +28,8 @@
     "pub:test": "yarn publish --access public"
   },
   "dependencies": {
-    "@dags/dag-base": "^0.x"
+    "@dags/dag-base": "^0.x",
+    "@dags/uid-uuid": "^0.x"
   },
   "files": [
     "*.js",
