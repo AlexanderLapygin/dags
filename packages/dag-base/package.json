@@ -1,7 +1,7 @@
 {
-  "name": "@dags/dag",
-  "version": "0.5.0",
-  "description": "Directed Acyclic Graph implementation",
+  "name": "@dags/dag-base",
+  "version": "0.1.0",
+  "description": "Directed Acyclic Graph base implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -26,9 +26,6 @@
     "test": "jest",
     "test:coverage": "yarn test --coverage",
     "pub:test": "yarn publish --access public"
-  },
-  "dependencies": {
-    "@dags/dag-base": "^0.x"
   },
   "files": [
     "*.js",

@@ -35,7 +35,8 @@
     "test:cov": "yarn test --coverage"
   },
   "dependencies": {
-    "@dags/dag": "^0.4.1",
+    "@dags/dag": "^0.5",
+    "@dags/dag-base": "^0.1",
     "@dags/uid-counter": "^0.4.2",
     "@dags/uid-uuid": "^0.4.2"
   },
