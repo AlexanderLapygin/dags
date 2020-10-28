@@ -1,5 +1,5 @@
 {
-  "name": "@dags/dag",
+  "name": "@dags/dag-local",
   "version": "0.5.0",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@dags/dag-base": "^0.x",
-    "@dags/uid-uuid": "^0.x"
+    "@dags/uid-counter": "^0.x"
   },
   "files": [
     "*.js",
@@ -39,8 +39,8 @@
   "keywords": [
     "data structure",
     "dag",
-    "global",
     "graph",
+    "local",
     "typescript"
   ],
   "publishConfig": {
