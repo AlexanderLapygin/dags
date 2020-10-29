@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.4.1...@dags/core@0.5.0) (2020-10-29)
+
+### Features
+
+- merge with dag-split-impl by local copy between branches
+  ([f067d9b](https://github.com/AlexanderLapygin/dags/commit/f067d9b7228325a3706773e0cd8052f8e2d8f9d5))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [0.4.2](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.4.1...@dags/core@0.4.2) (2020-10-27)
 
 **Note:** Version bump only for package @dags/core

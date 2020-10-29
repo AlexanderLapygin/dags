@@ -1,6 +1,6 @@
 {
   "name": "@dags/uid-counter",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "UID that is implemented as counter",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "pub": "yarn build:release && yarn publish --access public"
   },
   "devDependencies": {
-    "@dags/dag-base": "0.x"
+    "@dags/dag-base": "^0.2.0"
   },
   "peerDependencies": {
     "@dags/dag-base": "0.x"

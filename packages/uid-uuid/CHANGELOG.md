@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-uuid@0.4.1...@dags/uid-uuid@0.5.0) (2020-10-29)
+
+### Bug Fixes
+
+- renaming of modules
+  ([b4ca1a9](https://github.com/AlexanderLapygin/dags/commit/b4ca1a96525edd8c366dcd0bf7d468c60c7dc0ca))
+
+### Features
+
+- merge with dag-split-impl by local copy between branches
+  ([f067d9b](https://github.com/AlexanderLapygin/dags/commit/f067d9b7228325a3706773e0cd8052f8e2d8f9d5))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [0.4.2](https://github.com/AlexanderLapygin/dags/compare/@dags/uid-uuid@0.4.1...@dags/uid-uuid@0.4.2) (2020-10-27)
 
 ### Bug Fixes
