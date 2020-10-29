@@ -58,8 +58,8 @@ export class DagLocal {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {Dag} this dag
    */
-  setParenthood(child: UID, parent: UID): DagLocal {
-    this._dagBase.setParenthood(child, parent)
+  setParenthood(parent: UID, child: UID): DagLocal {
+    this._dagBase.setParenthood(parent, child)
     return this
   }
 
@@ -68,8 +68,8 @@ export class DagLocal {
    * from the parent node as a child.
    * @return {Dag} this dag
    */
-  removeParenthood(child: UID, parent: UID): DagLocal {
-    this._dagBase.removeParenthood(child, parent)
+  removeParenthood(parent: UID, child: UID): DagLocal {
+    this._dagBase.removeParenthood(parent, child)
     return this
   }
 

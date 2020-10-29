@@ -91,9 +91,9 @@ describe('Dag', () => {
       const current = dag.newNode()
       const parent = dag.newNode()
       expect(dag.getParents(current)).not.toContain(parent)
-      dag.setParenthood(current, parent)
+      dag.setParenthood(parent, current)
       expect(dag.getParents(current)).toContain(parent)
-      dag.removeParenthood(current, parent)
+      dag.removeParenthood(parent, current)
       expect(dag.getParents(current)).not.toContain(parent)
     })
   })
@@ -107,16 +107,16 @@ describe('Dag', () => {
     })
 
     it('Should return this dag', () => {
-      expect(dag.setParenthood(child, parent)).toBe(dag)
+      expect(dag.setParenthood(parent, child)).toBe(dag)
     })
     it('Should add the given parent to the given parent set', () => {
       expect(dag.getParents(child)).not.toContain(parent)
-      dag.setParenthood(child, parent)
+      dag.setParenthood(parent, child)
       expect(dag.getParents(child)).toContain(parent)
     })
     it("Should add the given node to the parent's child set", () => {
       expect(dag.getChildren(parent)).not.toContain(child)
-      dag.setParenthood(child, parent)
+      dag.setParenthood(parent, child)
       expect(dag.getChildren(parent)).toContain(child)
     })
     it('Should throw an Error when a parenthood established with itself', () => {
@@ -125,13 +125,13 @@ describe('Dag', () => {
       )
     })
     it('Should throw an error when parenthood establishing leads to a cycle', () => {
-      dag.setParenthood(child, parent)
-      expect(() => dag.setParenthood(parent, child)).toThrowError(
+      dag.setParenthood(parent, child)
+      expect(() => dag.setParenthood(child, parent)).toThrowError(
         'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
       )
       const grandson = dag.newNode()
-      dag.setParenthood(grandson, child)
-      expect(() => dag.setParenthood(parent, grandson)).toThrowError(
+      dag.setParenthood(child, grandson)
+      expect(() => dag.setParenthood(grandson, parent)).toThrowError(
         'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
       )
     })
@@ -145,21 +145,21 @@ describe('Dag', () => {
       child = dag.newNode()
       parent = dag.newNode()
       anotherParent = dag.newNode()
-      dag.setParenthood(child, parent)
-      dag.setParenthood(child, anotherParent)
+      dag.setParenthood(parent, child)
+      dag.setParenthood(anotherParent, child)
     })
 
     it('Should return this dag', () => {
-      expect(dag.removeParenthood(child, parent)).toBe(dag)
+      expect(dag.removeParenthood(parent, child)).toBe(dag)
     })
     it('Should remove the given parent from the given parent set', () => {
       expect(dag.getParents(child)).toContain(parent)
-      dag.removeParenthood(child, parent)
+      dag.removeParenthood(parent, child)
       expect(dag.getParents(child)).not.toContain(parent)
     })
     it("Should remove the given child from the parent's child set", () => {
       expect(dag.getChildren(parent)).toContain(child)
-      dag.removeParenthood(child, parent)
+      dag.removeParenthood(parent, child)
       expect(dag.getChildren(parent)).not.toContain(child)
     })
   })
@@ -173,9 +173,9 @@ describe('Dag', () => {
       const current = dag.newNode()
       const child = dag.newNode()
       expect(dag.getChildren(current)).not.toContain(child)
-      dag.setParenthood(child, current)
+      dag.setParenthood(current, child)
       expect(dag.getChildren(current)).toContain(child)
-      dag.removeParenthood(child, current)
+      dag.removeParenthood(current, child)
       expect(dag.getChildren(current)).not.toContain(child)
     })
   })
@@ -189,8 +189,8 @@ describe('Dag', () => {
       node = dag.newNode()
       son = dag.newNode()
       grandson = dag.newNode()
-      dag.setParenthood(son, node)
-      dag.setParenthood(grandson, son)
+      dag.setParenthood(node, son)
+      dag.setParenthood(son, grandson)
     })
 
     it('Should return false on arbitrary new node pair', () => {
