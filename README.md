@@ -30,6 +30,7 @@ $ npm install @dags/core
 At the moment, the library provides the following modules:
 
 - `dag`
+- `dag-local`
 - `uid-counter`
 - `uid-uuid`
 
