@@ -36,9 +36,9 @@ At the moment, the library provides the following modules:
 For example, you can use the `dag` module in semi-procedural style like this:
 
 ```ts
-import { Dag, UUID } from '@dags/core'
+import { Dag } from '@dags/core'
 
-const dag = new Dag(UUID)
+const dag = new Dag()
 
 const parent = dag.newNode()
 const child = dag.newNode()
