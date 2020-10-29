@@ -1,6 +1,6 @@
-import { Dag } from '@dags/core'
+import { DagLocal } from '@dags/core'
 
-const dag = new Dag()
+const dag = new DagLocal()
 
 const parent = dag.newNode()
 const child = dag.newNode()
