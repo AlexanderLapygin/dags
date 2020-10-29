@@ -15,6 +15,7 @@
     "prestart": "yarn && yarn bootstrap",
     "boot": "yarn prestart && yarn build",
     "build": "lerna run build --no-private --stream",
+    "build:all": "lerna run build --stream",
     "clean": "lerna clean --yes && rimraf node_modules",
     "test": "lerna run test --no-private --stream",
     "test:coverage": "lerna run test:coverage",

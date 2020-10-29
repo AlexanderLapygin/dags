@@ -2,6 +2,8 @@ import { DagLocal } from '@dags/core'
 
 const dag = new DagLocal()
 
+console.log('DagLocal example:')
+
 const parent = dag.newNode()
 const child = dag.newNode()
 console.log(dag.getNodes().size)

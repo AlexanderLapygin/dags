@@ -1,5 +1,7 @@
 import { UUID } from '@dags/core'
 
+console.log('UUID example:')
+
 const uuid1 = new UUID()
 const uuid2 = new UUID()
 
