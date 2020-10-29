@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Core module of the dags monorepo",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
