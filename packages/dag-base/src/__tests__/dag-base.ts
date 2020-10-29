@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { UID } from '../dag-base'
-import { DagBase } from '../dag-base'
+import { UID, DagBase } from '../dag-base'
 
 export class UIDMock implements UID {
   private static _counter = 0
