@@ -1,1 +1,1 @@
-# Directed Acyclic Graph with global node identification
+# Directed Acyclic Graph implementation

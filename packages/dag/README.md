@@ -1,1 +1,1 @@
-# Directed Acyclic Graph in TypeScript
+# Directed Acyclic Graph with global node identification
