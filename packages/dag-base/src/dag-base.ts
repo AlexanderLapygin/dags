@@ -113,11 +113,11 @@ export class DagBase {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {DagBase} this dag
    */
-  setParenthood(child: UID, parent: UID): DagBase {
+  setParenthood(parent: UID, child: UID): DagBase {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 
-    this.checkCycle(child, parent)
+    this.checkCycle(parent, child)
 
     this.getParents(child).add(parent)
     this.getChildren(parent).add(child)
@@ -130,7 +130,7 @@ export class DagBase {
    * from the parent node as a child.
    * @return {DagBase} this dag
    */
-  removeParenthood(child: UID, parent: UID): DagBase {
+  removeParenthood(parent: UID, child: UID): DagBase {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 
@@ -156,7 +156,7 @@ export class DagBase {
     return false
   }
 
-  private checkCycle(child: UID, parent: UID) {
+  private checkCycle(parent: UID, child: UID) {
     if (this.isDescendant(child, parent))
       throw new Error(
         'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
