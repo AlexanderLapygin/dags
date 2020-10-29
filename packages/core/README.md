@@ -13,7 +13,6 @@ This is the core module of the dags monorepo.
   </p>
 <br />
 
-
 ## Installing DAGs
 
 To use DAG modules, all you need to do is install the `@dags/core` package:
@@ -43,5 +42,5 @@ const dag = new Dag(UUID)
 
 const parent = dag.newNode()
 const child = dag.newNode()
-dag.setParenthood(child, parent)
+dag.setParenthood(parent, child)
 ```

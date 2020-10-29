@@ -42,7 +42,7 @@ const dag = new Dag(UUID)
 
 const parent = dag.newNode()
 const child = dag.newNode()
-dag.setParenthood(child, parent)
+dag.setParenthood(parent, child)
 ```
 
 ## License
