@@ -1,0 +1,50 @@
+{
+  "name": "@dags/dag-local",
+  "version": "0.5.0",
+  "description": "Directed Acyclic Graph implementation",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderLapygin/dags.git"
+  },
+  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/dag/README.md",
+  "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "concurrently yarn:build:*",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts -d dist/cjs --source-maps",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "clean": "rimraf *.d.ts coverage dist",
+    "lint": "concurrently yarn:lint:*",
+    "lint:src": "eslint src --ext .ts --config ../../.eslintrc",
+    "lint:types": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "yarn test --coverage",
+    "pub:test": "yarn publish --access public"
+  },
+  "dependencies": {
+    "@dags/dag-base": "^0.x",
+    "@dags/uid-counter": "^0.x"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "dist"
+  ],
+  "keywords": [
+    "data structure",
+    "dag",
+    "graph",
+    "local",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}
