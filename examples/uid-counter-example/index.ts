@@ -1,5 +1,7 @@
 import { UIDCounter } from '@dags/core'
 
+console.log('UIDCounter example')
+
 const uid1 = new UIDCounter()
 const uid2 = new UIDCounter()
 

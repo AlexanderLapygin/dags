@@ -1,6 +1,6 @@
 {
   "name": "@dags/dag",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -27,6 +27,10 @@
     "test:coverage": "yarn test --coverage",
     "pub:test": "yarn publish --access public"
   },
+  "dependencies": {
+    "@dags/dag-base": "^0.x",
+    "@dags/uid-uuid": "^0.x"
+  },
   "files": [
     "*.js",
     "*.d.ts",
@@ -35,6 +39,7 @@
   "keywords": [
     "data structure",
     "dag",
+    "global",
     "graph",
     "typescript"
   ],
