@@ -903,6 +903,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@dags/uid-counter@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@dags/uid-counter/-/uid-counter-0.5.0.tgz#b2b85d303ef20acff4380b24895c70e23cd2bae6"
+  integrity sha512-Bjn/EOZgMewJxCwwOP7tOd6A6Bpb+Df0CSePlxCHFSOSfhzeLccoP7aB9ZUaf3ryEGBb+Glao2qBxJyRUiV33w==
+
 "@eslint/eslintrc@^0.2.1":
   version "0.2.1"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.2.1.tgz#f72069c330461a06684d119384435e12a5d76e3c"

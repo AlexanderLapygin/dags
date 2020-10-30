@@ -1,4 +1,4 @@
-# uid-counter example
+# uid-local example
 
 ## Install
 
