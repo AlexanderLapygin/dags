@@ -31,7 +31,7 @@ At the moment, the library provides the following modules:
 
 - `dag`
 - `dag-local`
-- `uid-counter`
+- `uid-local`
 - `uid-uuid`
 
 For example, you can use the `dag` module in semi-procedural style like this:

@@ -3,7 +3,7 @@ import { v4 } from 'uuid'
 import { UID } from '@dags/dag-base'
 
 /**
- * Implements the UID interface that Dag requires.
+ * Implements the UID that Dag requires.
  * @class Unique id
  */
 export class UUID implements UID {

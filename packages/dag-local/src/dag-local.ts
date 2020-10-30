@@ -2,14 +2,14 @@
  * Provides DAG - Directed Acyclic Graph functionality.
  */
 import { DagBase, UID } from '@dags/dag-base'
-import { UIDCounter } from '@dags/uid-counter'
+import { UIDLocal } from '@dags/uid-local'
 
 export class DagLocal {
   /**
    * Dag implementation on which this implementation is based
    * @private
    */
-  private _dagBase = new DagBase(UIDCounter)
+  private _dagBase = new DagBase(UIDLocal)
 
   /**
    * Create new node of this graph.

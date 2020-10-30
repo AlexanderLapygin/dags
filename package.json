@@ -27,7 +27,9 @@
     "release:changed": "lerna publish from-package",
     "release": "lerna publish",
     "dag": "yarn workspace @dags/dag",
-    "uid-counter": "yarn workspace @dags/uid-counter",
+    "dag-base": "yarn workspace @dags/dag-base",
+    "dag-local": "yarn workspace @dags/dag-local",
+    "uid-local": "yarn workspace @dags/uid-local",
     "uid-uuid": "yarn workspace @dags/uid-uuid"
   },
   "devDependencies": {

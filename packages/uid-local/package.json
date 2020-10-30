@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/AlexanderLapygin/dags.git"
   },
-  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/uid-counter/README.md",
+  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/uid-local/README.md",
   "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
   "license": "MIT",
   "scripts": {
