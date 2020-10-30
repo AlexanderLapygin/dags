@@ -1,6 +1,6 @@
 {
   "name": "@dags/dag-local",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
