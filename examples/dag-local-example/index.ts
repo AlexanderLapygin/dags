@@ -6,6 +6,10 @@ console.log('DagLocal example:')
 
 const parent = dag.newNode()
 const child = dag.newNode()
+
+console.log(parent.equals(parent))
+console.log(parent.equals(child))
+
 console.log(dag.getNodes().size)
 
 console.log(dag.getChildren(parent).size)

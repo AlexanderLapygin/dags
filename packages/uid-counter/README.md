@@ -1,4 +1,4 @@
-# UID that is implemented in TypeScript as counter.
+# UID that is implemented in TypeScript as a counter.
 
 It is specialized for the cases that do not require global uniqueness, but require memory savings
 and speed.

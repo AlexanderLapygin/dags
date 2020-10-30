@@ -42,5 +42,9 @@ const dag = new Dag()
 
 const parent = dag.newNode()
 const child = dag.newNode()
+
+console.log(parent.equals(parent))
+console.log(parent.equals(child))
+
 dag.setParenthood(parent, child)
 ```
