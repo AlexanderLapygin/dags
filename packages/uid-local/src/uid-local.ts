@@ -5,15 +5,15 @@ import { UID } from '@dags/dag-base'
  * Implements the UID interface that Dag requires.
  * @class Unique id
  */
-export class UIDCounter implements UID {
+export class UIDLocal implements UID {
   private static _counter = 0
   private readonly _id: number
 
   constructor() {
-    this._id = UIDCounter._counter++
+    this._id = UIDLocal._counter++
   }
 
   equals(uid: UID): boolean {
-    return uid instanceof UIDCounter && this._id === uid._id
+    return uid instanceof UIDLocal && this._id === uid._id
   }
 }

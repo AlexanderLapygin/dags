@@ -1,7 +1,7 @@
 {
-  "name": "@dags/uid-counter",
-  "version": "0.5.0",
-  "description": "UID that is implemented as counter",
+  "name": "@dags/uid-local",
+  "version": "0.1.0",
+  "description": "UID for local use implemented as a counter",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -40,6 +40,7 @@
   ],
   "keywords": [
     "counter",
+    "local",
     "typescript",
     "uid"
   ],
