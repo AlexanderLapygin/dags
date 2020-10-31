@@ -1,4 +1,4 @@
-# Directed Acyclic Graph with local node identification
+# Directed Acyclic Graph with local identification
 
 ## Install
 
