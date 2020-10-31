@@ -29,17 +29,17 @@ $ npm install @dags/core
 
 At the moment, the library provides the following modules:
 
-- `dag`
+- `dag-global`
 - `dag-local`
 - `uid-local`
 - `uid-uuid`
 
-For example, you can use the `dag` module in semi-procedural style like this:
+For example, you can use the `dag-global` module in semi-procedural style like this:
 
 ```ts
-import { Dag } from '@dags/core'
+import { DagGlobal } from '@dags/core'
 
-const dag = new Dag()
+const dag = new DagGlobal()
 
 const parent = dag.newNode()
 const child = dag.newNode()

@@ -1,8 +1,9 @@
-import { Dag } from '@dags/core'
+import { DagLocal } from '@dags/core'
+import { DagGlobal } from '@dags/dag-global'
 
-const dag = new Dag()
+const dag = new DagGlobal()
 
-console.log('Dag example:')
+console.log('DagGlobal example:')
 
 const parent = dag.newNode()
 const child = dag.newNode()

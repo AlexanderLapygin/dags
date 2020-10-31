@@ -26,9 +26,9 @@ $ npm install @dags/core
 ## Usage
 
 ```ts
-import { Dag } from '@dags/core'
+import { DagGlobal } from '@dags/core'
 
-const dag = new Dag()
+const dag = new DagGlobal()
 
 const parent = dag.newNode()
 const child = dag.newNode()
