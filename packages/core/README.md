@@ -29,7 +29,7 @@ $ npm install @dags/core
 
 At the moment, the library exposes such modules:
 
-- `dag-global`
+- `dag`
 - `dag-local`
 - `uid-local`
 - `uid-uuid`

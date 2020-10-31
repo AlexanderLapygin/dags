@@ -1,4 +1,4 @@
-import { DagGlobal } from '@dags/dag-global'
+import { DagGlobal } from '@dags/dag'
 
 const dag = new DagGlobal()
 

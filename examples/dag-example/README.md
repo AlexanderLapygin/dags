@@ -1,4 +1,4 @@
-# dag-global example
+# dag example
 
 ## Install
 
