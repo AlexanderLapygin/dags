@@ -1,8 +1,8 @@
 {
-  "name": "dag-example",
+  "name": "dag-global-example",
   "private": true,
-  "version": "1.1.0",
-  "description": "Example for the DAGs",
+  "version": "1.0.0",
+  "description": "Example for the DagGlobal",
   "license": "MIT",
   "scripts": {
     "build": "tsc index.ts",

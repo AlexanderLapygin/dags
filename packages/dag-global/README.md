@@ -1,4 +1,4 @@
-# Welcome to the DAGs
+# Directed Acyclic Graph with global node identification
 
 This is the core module of the dags monorepo.
 
@@ -13,9 +13,7 @@ This is the core module of the dags monorepo.
   </p>
 <br />
 
-## Installing DAGs
-
-To use DAG modules, all you need to do is install the `@dags/core` package:
+## Install
 
 ```sh
 $ yarn add @dags/core
@@ -26,15 +24,6 @@ $ npm install @dags/core
 ```
 
 ## Usage
-
-At the moment, the library exposes such modules:
-
-- `dag-global`
-- `dag-local`
-- `uid-local`
-- `uid-uuid`
-
-For example, you can use the `dag` module like this:
 
 ```ts
 import { DagGlobal } from '@dags/core'

@@ -1,17 +1,17 @@
-import { Dag } from '../dag'
+import { DagGlobal } from '../dag-global'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { UID } from '@dags/dag-base'
 
 describe('Dag', () => {
-  let dag: Dag
+  let dag: DagGlobal
 
   beforeEach(function () {
-    dag = new Dag()
+    dag = new DagGlobal()
   })
 
   describe('constructor', () => {
     it('Should execute without any problem', () => {
-      expect(() => new Dag()).not.toThrow()
+      expect(() => new DagGlobal()).not.toThrow()
     })
     it('Should return an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)

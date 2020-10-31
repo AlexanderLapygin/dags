@@ -4,7 +4,7 @@
 import { DagBase, UID } from '@dags/dag-base'
 import { UUID } from '@dags/uid-uuid'
 
-export class Dag {
+export class DagGlobal {
   /**
    * Dag implementation on which this implementation is based
    * @private
@@ -24,7 +24,7 @@ export class Dag {
    * @return {Dag} this graph.
    * @param node
    */
-  deleteNode(node: UID): Dag {
+  deleteNode(node: UID): DagGlobal {
     this._dagBase.deleteNode(node)
     return this
   }
@@ -58,7 +58,7 @@ export class Dag {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {Dag} this dag
    */
-  setParenthood(parent: UID, child: UID): Dag {
+  setParenthood(parent: UID, child: UID): DagGlobal {
     this._dagBase.setParenthood(parent, child)
     return this
   }
@@ -68,7 +68,7 @@ export class Dag {
    * from the parent node as a child.
    * @return {Dag} this dag
    */
-  removeParenthood(parent: UID, child: UID): Dag {
+  removeParenthood(parent: UID, child: UID): DagGlobal {
     this._dagBase.removeParenthood(parent, child)
     return this
   }
