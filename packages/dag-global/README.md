@@ -1,4 +1,4 @@
-# Directed Acyclic Graph with global node identification
+# Directed Acyclic Graph with global identification
 
 This is the core module of the dags monorepo.
 
