@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@dags/core": "^0.x"
+    "@dags/core": "latest"
   },
   "devDependencies": {
     "@types/node": "^14.0.26"

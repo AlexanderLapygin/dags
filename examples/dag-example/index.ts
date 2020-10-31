@@ -1,8 +1,8 @@
-import { DagGlobal } from '@dags/dag'
+import { Dag } from '@dags/dag'
 
-const dag = new DagGlobal()
+const dag = new Dag()
 
-console.log('DagGlobal example:')
+console.log('Dag example:')
 
 const parent = dag.newNode()
 const child = dag.newNode()

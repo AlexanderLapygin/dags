@@ -37,9 +37,9 @@ At the moment, the library exposes such modules:
 For example, you can use the `dag` module like this:
 
 ```ts
-import { DagGlobal } from '@dags/core'
+import { DagG } from '@dags/core'
 
-const dag = new DagGlobal()
+const dag = new Dag()
 
 const parent = dag.newNode()
 const child = dag.newNode()

@@ -2,7 +2,7 @@
   "name": "dag-example",
   "private": true,
   "version": "1.0.1",
-  "description": "Example for the DagGlobal",
+  "description": "Example for the Dag",
   "license": "MIT",
   "scripts": {
     "build": "tsc index.ts",
@@ -10,7 +10,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@dags/core": "^0.5.1"
+    "@dags/core": "latest"
   },
   "devDependencies": {
     "@types/node": "^14.0.26"
