@@ -1,4 +1,3 @@
-import { DagLocal } from '@dags/core'
 import { DagGlobal } from '@dags/dag-global'
 
 const dag = new DagGlobal()

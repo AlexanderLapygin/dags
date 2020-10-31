@@ -26,7 +26,7 @@
     "versionup-then-release-by-ci": "lerna version --conventional-commits --conventional-graduate",
     "release:changed": "lerna publish from-package",
     "release": "lerna publish",
-    "dag": "yarn workspace @dags/dag",
+    "dag": "yarn workspace @dags/dag-global",
     "dag-base": "yarn workspace @dags/dag-base",
     "dag-local": "yarn workspace @dags/dag-local",
     "uid-local": "yarn workspace @dags/uid-local",
