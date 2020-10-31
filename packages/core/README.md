@@ -29,7 +29,7 @@ $ npm install @dags/core
 
 At the moment, the library exposes such modules:
 
-- `dag`
+- `dag-global`
 - `dag-local`
 - `uid-local`
 - `uid-uuid`
@@ -37,9 +37,9 @@ At the moment, the library exposes such modules:
 For example, you can use the `dag` module like this:
 
 ```ts
-import { Dag } from '@dags/core'
+import { DagGlobal } from '@dags/core'
 
-const dag = new Dag()
+const dag = new DagGlobal()
 
 const parent = dag.newNode()
 const child = dag.newNode()
