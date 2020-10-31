@@ -1,6 +1,6 @@
-# DAGs
+# Directed Acyclic Graph with global node identification
 
-A library that implements a **Directed Acyclic Graph** and some related functionality.
+This is the core module of the dags monorepo.
 
 <br>
   <p align="center">
@@ -13,9 +13,7 @@ A library that implements a **Directed Acyclic Graph** and some related function
   </p>
 <br />
 
-## Installing
-
-To use DAG modules, all you need to do is install the `@dags/core` package:
+## Install
 
 ```sh
 $ yarn add @dags/core
@@ -27,15 +25,6 @@ $ npm install @dags/core
 
 ## Usage
 
-At the moment, the library provides the following modules:
-
-- `dag-global`
-- `dag-local`
-- `uid-local`
-- `uid-uuid`
-
-For example, you can use the `dag-global` module in semi-procedural style like this:
-
 ```ts
 import { DagGlobal } from '@dags/core'
 
@@ -43,9 +32,9 @@ const dag = new DagGlobal()
 
 const parent = dag.newNode()
 const child = dag.newNode()
+
+console.log(parent.equals(parent))
+console.log(parent.equals(child))
+
 dag.setParenthood(parent, child)
 ```
-
-## License
-
-MIT © [Alexander Lapygin](https://github.com/AlexanderLapygin)
