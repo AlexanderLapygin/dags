@@ -1,1 +1,1 @@
-# This package has been deprecated use @dags/dag-global instead
+# This package has been deprecated, use @dags/dag-global instead
