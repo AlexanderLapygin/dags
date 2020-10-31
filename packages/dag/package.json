@@ -1,6 +1,6 @@
 {
   "name": "@dags/dag",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
