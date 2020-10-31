@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.5.0...@dags/core@0.7.0) (2020-10-31)
+
+### Bug Fixes
+
+- align readme with code
+  ([af4753e](https://github.com/AlexanderLapygin/dags/commit/af4753edf95861a84dfa60bf201deb00830acd45))
+- rename of core for publication in NPM
+  ([180f79f](https://github.com/AlexanderLapygin/dags/commit/180f79fe285aa83c631841acc58c86420a1d7020))
+- rename UIDCounter to UIDLocal
+  ([647d8d3](https://github.com/AlexanderLapygin/dags/commit/647d8d3adb001a255b0b3e58d87d4286380d95f9))
+
+### Features
+
+- rename UIDCounter to UIDLocal
+  ([a4144e3](https://github.com/AlexanderLapygin/dags/commit/a4144e3f53140d870b1312792d4dd73d0f0e0829))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 # [0.5.0](https://github.com/AlexanderLapygin/dags/compare/@dags/core@0.4.1...@dags/core@0.5.0) (2020-10-29)
 
 ### Features

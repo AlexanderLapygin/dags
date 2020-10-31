@@ -1,7 +1,7 @@
 {
   "name": "dag-global-example",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Example for the DagGlobal",
   "license": "MIT",
   "scripts": {

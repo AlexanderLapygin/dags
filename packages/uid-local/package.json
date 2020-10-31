@@ -1,6 +1,6 @@
 {
   "name": "@dags/uid-local",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "UID for local use implemented as a counter",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "pub": "yarn build:release && yarn publish --access public"
   },
   "devDependencies": {
-    "@dags/dag-base": "^0.2.0"
+    "@dags/dag-base": "^0.2.2"
   },
   "peerDependencies": {
     "@dags/dag-base": "0.x"

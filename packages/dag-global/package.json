@@ -1,6 +1,6 @@
 {
   "name": "@dags/dag-global",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,8 +28,8 @@
     "pub:test": "yarn publish --access public"
   },
   "dependencies": {
-    "@dags/dag-base": "^0.2.0",
-    "@dags/uid-uuid": "^0.5.0"
+    "@dags/dag-base": "^0.2.2",
+    "@dags/uid-uuid": "^0.5.1"
   },
   "files": [
     "*.js",
