@@ -1,4 +1,4 @@
-// Export all modules
+// Expose modules
 export * from '@dags/dag-global'
 export * from '@dags/dag-local'
 export * from '@dags/uid-local'
