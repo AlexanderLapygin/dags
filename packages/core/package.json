@@ -1,6 +1,6 @@
 {
   "name": "@dags/core",
-  "version": "0.8.0",
+  "version": "0.8.2",
   "description": "Core module of the dags monorepo",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -35,8 +35,8 @@
     "test:cov": "yarn test --coverage"
   },
   "dependencies": {
+    "@dags/dag": "^0.6.4",
     "@dags/dag-base": "^0.2.2",
-    "@dags/dag-global": "^0.1.1",
     "@dags/dag-local": "^0.6.2",
     "@dags/uid-local": "^0.2.0",
     "@dags/uid-uuid": "^0.5.1"

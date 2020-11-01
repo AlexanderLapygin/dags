@@ -4,7 +4,7 @@
 import { DagBase } from '@dags/dag-base'
 import { UUID } from '@dags/uid-uuid'
 
-export class DagGlobal extends DagBase {
+export class Dag extends DagBase {
   constructor() {
     super(UUID)
   }

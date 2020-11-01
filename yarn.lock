@@ -903,48 +903,16 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dags/core@^0.5.0":
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/@dags/core/-/core-0.5.2.tgz#a96edacd0a8f267a2be2192d258412848e525fcc"
-  integrity sha512-a0MSqCQGDx/H00r6w+zwzr+1QKG7MhAGdoEoztSgp9xwgzcoX4UyCxn7aljh9S2k+xoqNwUctbejzWtw7+L/rw==
-  dependencies:
-    "@dags/dag" "^0.6.0"
-    "@dags/dag-local" "^0.6.0"
-    "@dags/uid-counter" "^0.5.0"
-    "@dags/uid-uuid" "^0.5.0"
-
-"@dags/core@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@dags/core/-/core-0.7.0.tgz#d3afae7e81a2b10618d162f0b6962e80f42b0cf9"
-  integrity sha512-QWOgH9zuqfNTiEwr0AgWIUoF3xaGKJTEMQBvTP1cq89V2Zchlg/WhU49QxrRZubcRxRlK8AG6yJMX/APBbY8cw==
-  dependencies:
-    "@dags/dag-global" "^0.1.1"
-    "@dags/dag-local" "^0.6.2"
-    "@dags/uid-local" "^0.2.0"
-    "@dags/uid-uuid" "^0.5.1"
-
 "@dags/core@latest":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@dags/core/-/core-0.8.0.tgz#7616995f282b7f0a97c218979a96f0c2d0c9824d"
-  integrity sha512-N+gQ4nnPsKjW+spPMYDOA28ya22w40boA+95twZrw28Pj7c0eNndrL803I9OaeZ1053MsO0wemflUepoKEA8iw==
+  version "0.8.1"
+  resolved "https://registry.npmjs.org/@dags/core/-/core-0.8.1.tgz#1c672ff047279caf4f5c8272ae3a015ae01acfc0"
+  integrity sha512-BzknRip5wzrIVl6/QeKwPTbDOhFg+hnY7L3K3qWp63W8LkiXd3+WxepyfLgNxJ7aglPENWMolK6rVOgP5sa7Rw==
   dependencies:
-    "@dags/dag-global" "^0.1.1"
+    "@dags/dag" "^0.6.4"
+    "@dags/dag-base" "^0.2.2"
     "@dags/dag-local" "^0.6.2"
     "@dags/uid-local" "^0.2.0"
     "@dags/uid-uuid" "^0.5.1"
-
-"@dags/dag@^0.6.0":
-  version "0.6.3"
-  resolved "https://registry.npmjs.org/@dags/dag/-/dag-0.6.3.tgz#c1910820d2e5640db968c72f405ba5646d63839e"
-  integrity sha512-dVkJwsCYy7/j8ARayq8DTLj92zwkHYJFdE1JmwVjxkEEkhP2Nz1kYVi3Ru72iT1MDfMoD+Nek/VnRMZB4ALifA==
-  dependencies:
-    "@dags/dag-base" "^0.2.0"
-    "@dags/uid-uuid" "^0.5.0"
-
-"@dags/uid-counter@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/@dags/uid-counter/-/uid-counter-0.5.0.tgz#b2b85d303ef20acff4380b24895c70e23cd2bae6"
-  integrity sha512-Bjn/EOZgMewJxCwwOP7tOd6A6Bpb+Df0CSePlxCHFSOSfhzeLccoP7aB9ZUaf3ryEGBb+Glao2qBxJyRUiV33w==
 
 "@eslint/eslintrc@^0.2.1":
   version "0.2.1"

@@ -1,6 +1,6 @@
 {
-  "name": "@dags/dag-global",
-  "version": "0.1.2",
+  "name": "@dags/dag",
+  "version": "0.6.5",
   "description": "Directed Acyclic Graph implementation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/AlexanderLapygin/dags.git"
   },
-  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/dag-global/README.md",
+  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/dag/README.md",
   "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
   "license": "MIT",
   "scripts": {
