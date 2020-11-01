@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*", "examples/*"],
+  "packages": ["packages/lib/*", "packages/ui-lib/*", "packages/app/*", "examples/*"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
