@@ -903,17 +903,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dags/core@latest":
-  version "0.8.1"
-  resolved "https://registry.npmjs.org/@dags/core/-/core-0.8.1.tgz#1c672ff047279caf4f5c8272ae3a015ae01acfc0"
-  integrity sha512-BzknRip5wzrIVl6/QeKwPTbDOhFg+hnY7L3K3qWp63W8LkiXd3+WxepyfLgNxJ7aglPENWMolK6rVOgP5sa7Rw==
-  dependencies:
-    "@dags/dag" "^0.6.4"
-    "@dags/dag-base" "^0.2.2"
-    "@dags/dag-local" "^0.6.2"
-    "@dags/uid-local" "^0.2.0"
-    "@dags/uid-uuid" "^0.5.1"
-
 "@eslint/eslintrc@^0.2.1":
   version "0.2.1"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.2.1.tgz#f72069c330461a06684d119384435e12a5d76e3c"
