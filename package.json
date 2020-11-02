@@ -3,7 +3,9 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
+      "packages/lib/*",
+      "packages/ui-lib/*",
+      "packages/app/*",
       "examples/*"
     ]
   },
