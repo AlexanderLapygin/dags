@@ -24,7 +24,7 @@
     "lint": "lerna run lint --no-private --stream",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bundlesize": "bundlesize -c bundlesize.config.json",
-    "husky": "husky-run lint-staged",
+    "husky": "husky-run lint-staged --allow-empty",
     "versionup-then-release-by-ci": "lerna version --conventional-commits --conventional-graduate",
     "release:changed": "lerna publish from-package",
     "release": "lerna publish",
