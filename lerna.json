@@ -6,7 +6,13 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "ignoreChanges": ["**/example/**", "**/__fixtures__/**", "**/__tests__/**", "**/*.md"],
+      "ignoreChanges": [
+        "**/doc/**",
+        "**/example/**",
+        "**/__fixtures__/**",
+        "**/__tests__/**",
+        "**/*.md"
+      ],
       "allowBranch": "master"
     }
   }
