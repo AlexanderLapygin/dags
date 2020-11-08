@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSON Abstract Graph Serialization Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "directed": {
+      "type": ["boolean"],
+      "default": true
+    },
+    "multigraph": {
+      "type": ["boolean"],
+      "default": false
+    },
+    "edges": {
+      "type": ["array"],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "required": ["source"]
+      }
+    }
+  },
+  "required": ["edges"]
+}

@@ -1,0 +1,21 @@
+{
+  "multigraph": true,
+  "directed": false,
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n2"
+    },
+    {
+      "source": "n2",
+      "target": "n3"
+    },
+    {
+      "source": "n2",
+      "target": "n3"
+    },
+    {
+      "source": "n4"
+    }
+  ]
+}
