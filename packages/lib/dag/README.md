@@ -1,7 +1,5 @@
 # Directed Acyclic Graph with global identification
 
-This is the core module of the dags monorepo.
-
 <br>
   <p align="center">
     <a href="https://www.npmjs.com/package/@dags/core"><img alt="NPM module version" src="https://img.shields.io/npm/v/@dags/core"></a>  
