@@ -1,5 +1,6 @@
 {
   "name": "@dags/graph-serializer",
+  "private": true,
   "version": "0.1.0",
   "description": "Graph serialization module",
   "main": "dist/cjs/index.js",
