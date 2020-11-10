@@ -13,7 +13,7 @@ describe('Dag', () => {
     it('Should execute without any problem', () => {
       expect(() => new Dag()).not.toThrow()
     })
-    it('Should return an empty nodeset', () => {
+    it('Should create an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)
     })
   })
