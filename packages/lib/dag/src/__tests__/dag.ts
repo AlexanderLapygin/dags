@@ -13,6 +13,11 @@ describe('Dag', () => {
     it('Should execute without any problem', () => {
       expect(() => new Dag()).not.toThrow()
     })
+    it('Should create a unique own id', () => {
+      const dag1 = new Dag()
+      const dag2 = new Dag()
+      expect(dag1.id).not.toBe(dag2.id)
+    })
     it('Should create an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)
     })

@@ -13,6 +13,11 @@ describe('DagLocal', () => {
     it('Should execute without any problem', () => {
       expect(() => new DagLocal()).not.toThrow()
     })
+    it('Should create a unique own id', () => {
+      const dag1 = new DagLocal()
+      const dag2 = new DagLocal()
+      expect(dag1.id).not.toBe(dag2.id)
+    })
     it('Should return an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)
     })
