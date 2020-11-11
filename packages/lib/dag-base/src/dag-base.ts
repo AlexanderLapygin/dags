@@ -1,5 +1,5 @@
 /**
- * Required interface of the UID Constructor
+ * Required interface of the Dag for UID Constructor
  */
 export interface UIDConstructor {
   new (): UID
