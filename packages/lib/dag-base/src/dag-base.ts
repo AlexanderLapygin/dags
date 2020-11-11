@@ -17,11 +17,6 @@ export interface UID {
 }
 
 /**
- * Required gateway interface
- */
-export interface Gateway {}
-
-/**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
 export class DagBase {
