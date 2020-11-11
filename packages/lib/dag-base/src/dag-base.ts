@@ -1,12 +1,12 @@
 /**
- * Required interface of the Dag for UID Constructor
+ * Required interface for UID Constructor
  */
 export interface UIDConstructor {
   new (): UID
 }
 
 /**
- * Required interface of the Dag
+ * Required interface for UID
  */
 export interface UID {
   /**
@@ -17,11 +17,23 @@ export interface UID {
 }
 
 /**
+ * Required gateway interface
+ */
+export interface Gateway {}
+
+/**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
 export class DagBase {
   /**
-   * Set of nodes of the graph
+   * Id of this dag
+   * @type {Set}
+   * @public
+   */
+  public readonly id: UID
+
+  /**
+   * Set of nodes of the dag
    * @type {Set}
    * @private
    */
@@ -47,7 +59,9 @@ export class DagBase {
    * @constructor
    * @param uid constructor for UIDs
    */
-  constructor(public uid: UIDConstructor) {}
+  constructor(public uid: UIDConstructor) {
+    this.id = new uid()
+  }
 
   /**
    * Create new node of this graph.

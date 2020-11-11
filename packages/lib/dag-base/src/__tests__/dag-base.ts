@@ -29,6 +29,11 @@ describe('Dag with UIDMock', () => {
     it('Should execute without any problem', () => {
       expect(() => new DagBase(UIDMock)).not.toThrow()
     })
+    it('Should create a unique own id', () => {
+      const dag1 = new DagBase(UIDMock)
+      const dag2 = new DagBase(UIDMock)
+      expect(dag1.id).not.toBe(dag2.id)
+    })
     it('Should return an empty nodeset', () => {
       expect(dag.getNodes().size).toBe(0)
     })
