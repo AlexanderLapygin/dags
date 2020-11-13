@@ -77,7 +77,7 @@ export interface DagGateway {
 /**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
-export class DagBase {
+export class DagBase implements DagGateway {
   /**
    * Id of this dag
    * @type {Set}
@@ -106,65 +106,37 @@ export class DagBase {
     return nodeUID
   }
 
-  /**
-   * Delete a node from nodeset of this graph.
-   * @return {DagBase} this graph.
-   * @param node
-   */
-  deleteNode(node: UID): DagBase {
+  addNode(node: UID): DagGateway {
+    throw new Error('Unsupported method in this implementation. Use newNode instead, please!')
+  }
+
+  deleteNode(node: UID): DagGateway {
     this.gateway.deleteNode(node)
     return this
   }
 
-  /**
-   * @return nodeset of this dag
-   */
   getNodes(): Set<UID> {
     return this.gateway.getNodes()
   }
 
-  /**
-   * Obtain parents of the given node.
-   * @param node
-   * @return parents of the given node.
-   */
   getParents(node: UID): Set<UID> {
     return this.gateway.getParents(node)
   }
 
-  /**
-   * Obtain children of the given node.
-   * @param node
-   * @return children of the given node.
-   */
   getChildren(node: UID): Set<UID> {
     return this.gateway.getChildren(node)
   }
 
-  /**
-   * Add parent node to the given node and implicitly add given node to the parent node as a child.
-   * @return {DagBase} this dag
-   */
-  setParenthood(parent: UID, child: UID): DagBase {
+  setParenthood(parent: UID, child: UID): DagGateway {
     this.gateway.setParenthood(parent, child)
     return this
   }
 
-  /**
-   * Remove parent node from the given node and implicitly remove the given node.
-   * from the parent node as a child.
-   * @return {DagBase} this dag
-   */
-  removeParenthood(parent: UID, child: UID): DagBase {
+  removeParenthood(parent: UID, child: UID): DagGateway {
     this.gateway.removeParenthood(parent, child)
     return this
   }
 
-  /**
-   * Checking if the node being checked is a descendant or not.
-   * @param current current node.
-   * @param tested tested node.
-   */
   isDescendant(current: UID, tested: UID) {
     return this.gateway.isDescendant(current, tested)
   }
