@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { UID, DagBase } from '../dag-base'
+import { DagGatewayInMemory } from '../dag-gateway-in-memory'
 
 export class UIDMock implements UID {
   private static _counter = 0
@@ -22,16 +23,16 @@ describe('Dag with UIDMock', () => {
   let dag: DagBase
 
   beforeEach(function () {
-    dag = new DagBase(UIDMock)
+    dag = new DagBase(new DagGatewayInMemory(), UIDMock)
   })
 
   describe('constructor', () => {
     it('Should execute without any problem', () => {
-      expect(() => new DagBase(UIDMock)).not.toThrow()
+      expect(() => new DagBase(new DagGatewayInMemory(), UIDMock)).not.toThrow()
     })
     it('Should create a unique own id', () => {
-      const dag1 = new DagBase(UIDMock)
-      const dag2 = new DagBase(UIDMock)
+      const dag1 = new DagBase(new DagGatewayInMemory(), UIDMock)
+      const dag2 = new DagBase(new DagGatewayInMemory(), UIDMock)
       expect(dag1.id).not.toBe(dag2.id)
     })
     it('Should return an empty nodeset', () => {

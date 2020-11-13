@@ -17,6 +17,64 @@ export interface UID {
 }
 
 /**
+ * Required interface for Gateway
+ */
+export interface DagGateway {
+  /**
+   * Add node to this dag.
+   * @return {DagGateway} itself
+   */
+  addNode(node: UID): DagGateway
+
+  /**
+   * Obtain nodeset of this dag
+   * @return {Set<UID>} nodeset of this dag
+   */
+  getNodes(): Set<UID>
+
+  /**
+   * Delete a node from nodeset of this dag.
+   * @return {DagGateway} itself.
+   * @param node
+   */
+  deleteNode(node: UID): DagGateway
+
+  /**
+   * Obtain parents of the given node.
+   * @param node
+   * @return {Set<UID>} parents of the given node.
+   */
+  getParents(node: UID): Set<UID>
+
+  /**
+   * Obtain children of the given node.
+   * @return {Set<UID>} children of the given node.
+   * @param node a given node
+   */
+  getChildren(node: UID): Set<UID>
+
+  /**
+   * Add parent node to the given node and implicitly add given node to the parent node as a child.
+   * @return {DagGateway} itself
+   */
+  setParenthood(parent: UID, child: UID): DagGateway
+
+  /**
+   * Remove parent node to the given node and implicitly remove given node to the parent node as a child.
+   * @return {DagGateway} itself
+   */
+  removeParenthood(parent: UID, child: UID): DagGateway
+
+  /**
+   * Checking if the node being checked is a descendant or not.
+   * @param current current node.
+   * @param tested tested node.
+   * @return {boolean} true if tested node is descendant of current node and false otherwise
+   */
+  isDescendant(current: UID, tested: UID): boolean
+}
+
+/**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
 export class DagBase {
@@ -28,33 +86,13 @@ export class DagBase {
   public readonly id: UID
 
   /**
-   * Set of nodes of the dag
-   * @type {Set}
-   * @private
-   */
-  private _nodes = new Set<UID>()
-
-  /**
-   * Map of nodes to their children.
-   * @type {Map}
-   * @private
-   */
-  private _childMap = new Map<UID, Set<UID>>()
-
-  /**
-   * Map of nodes to their parents.
-   * @type {Map}
-   * @private
-   */
-  private _parentMap = new Map<UID, Set<UID>>()
-
-  /**
    * Creates a DAG.
    * @class a Directed Acyclic Graph.
    * @constructor
+   * @param gateway dag gateway
    * @param uid constructor for UIDs
    */
-  constructor(public uid: UIDConstructor) {
+  constructor(private gateway: DagGateway, public uid: UIDConstructor) {
     this.id = new uid()
   }
 
@@ -64,9 +102,7 @@ export class DagBase {
    */
   newNode(): UID {
     const nodeUID: UID = new this.uid()
-    this._nodes.add(nodeUID)
-    this._parentMap.set(nodeUID, new Set<UID>())
-    this._childMap.set(nodeUID, new Set<UID>())
+    this.gateway.addNode(nodeUID)
     return nodeUID
   }
 
@@ -76,14 +112,7 @@ export class DagBase {
    * @param node
    */
   deleteNode(node: UID): DagBase {
-    for (const parent of this.getParents(node)) {
-      this.removeParenthood(node, parent)
-    }
-    for (const child of this.getChildren(node)) {
-      this.removeParenthood(child, node)
-    }
-
-    this._nodes.delete(node)
+    this.gateway.deleteNode(node)
     return this
   }
 
@@ -91,7 +120,7 @@ export class DagBase {
    * @return nodeset of this dag
    */
   getNodes(): Set<UID> {
-    return this._nodes
+    return this.gateway.getNodes()
   }
 
   /**
@@ -100,10 +129,7 @@ export class DagBase {
    * @return parents of the given node.
    */
   getParents(node: UID): Set<UID> {
-    if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
-
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return this._parentMap.get(node)!
+    return this.gateway.getParents(node)
   }
 
   /**
@@ -112,10 +138,7 @@ export class DagBase {
    * @return children of the given node.
    */
   getChildren(node: UID): Set<UID> {
-    if (!this._nodes.has(node)) throw new Error("node doesn't belong to this graph")
-
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return this._childMap.get(node)!
+    return this.gateway.getChildren(node)
   }
 
   /**
@@ -123,14 +146,7 @@ export class DagBase {
    * @return {DagBase} this dag
    */
   setParenthood(parent: UID, child: UID): DagBase {
-    if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
-    if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
-
-    this.checkCycle(parent, child)
-
-    this.getParents(child).add(parent)
-    this.getChildren(parent).add(child)
-
+    this.gateway.setParenthood(parent, child)
     return this
   }
 
@@ -140,12 +156,7 @@ export class DagBase {
    * @return {DagBase} this dag
    */
   removeParenthood(parent: UID, child: UID): DagBase {
-    if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
-    if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
-
-    this.getParents(child).delete(parent)
-    this.getChildren(parent).delete(child)
-
+    this.gateway.removeParenthood(parent, child)
     return this
   }
 
@@ -155,20 +166,6 @@ export class DagBase {
    * @param tested tested node.
    */
   isDescendant(current: UID, tested: UID) {
-    if (current.equals(tested)) return true
-
-    for (const child of this.getChildren(current))
-      if (this.isDescendant(child, tested)) {
-        return true
-      }
-
-    return false
-  }
-
-  private checkCycle(parent: UID, child: UID) {
-    if (this.isDescendant(child, parent))
-      throw new Error(
-        'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
-      )
+    return this.gateway.isDescendant(current, tested)
   }
 }
