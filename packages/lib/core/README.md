@@ -30,6 +30,8 @@ $ npm install @dags/core
 At the moment, the library exposes such modules:
 
 - `dag`
+- `dag-gateway-in-memory`
+- `dag-gateway-rest`
 - `dag-local`
 - `uid-local`
 - `uid-uuid`

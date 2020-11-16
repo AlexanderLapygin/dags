@@ -37,6 +37,8 @@
   "dependencies": {
     "@dags/dag": "^0.6.4",
     "@dags/dag-base": "^0.2.2",
+    "@dags/dag-gateway-in-memory": "^0.1.0",
+    "@dags/dag-gateway-rest": "^0.1.0",
     "@dags/dag-local": "^0.6.2",
     "@dags/uid-local": "^0.2.0",
     "@dags/uid-uuid": "^0.5.1"

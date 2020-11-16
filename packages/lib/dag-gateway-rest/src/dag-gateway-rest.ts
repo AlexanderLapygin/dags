@@ -2,9 +2,11 @@
  * Provides DAG gateway-in-memory implementation.
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { DagGateway, UID } from './dag-base'
+import { DagGateway, UID } from '@dags/dag-base'
 
-export class DagGatewayInMemory implements DagGateway {
+// Temporarily it is a copy of dag-gateway-in-memory implementation
+// TBD Do right implementation
+export class DagGatewayRest implements DagGateway {
   /**
    * Set of nodes of the dag
    * @type {Set}

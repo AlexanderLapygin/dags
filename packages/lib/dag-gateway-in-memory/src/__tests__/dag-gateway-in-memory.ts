@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { DagGateway, UID } from '../dag-base'
+import { DagGateway, UID } from '@dags/dag-base'
 import { DagGatewayInMemory } from '../dag-gateway-in-memory'
 import { UIDLocal } from '@dags/uid-local'
 

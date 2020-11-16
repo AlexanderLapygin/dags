@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@dags/dag-base": "^0.2.2",
+    "@dags/dag-gateway-in-memory": "^0.1.0",
     "@dags/uid-local": "^0.2.0"
   },
   "files": [

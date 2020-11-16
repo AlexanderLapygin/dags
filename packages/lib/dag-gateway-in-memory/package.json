@@ -1,7 +1,7 @@
 {
-  "name": "@dags/dag",
-  "version": "0.6.5",
-  "description": "Directed Acyclic Graph implementation",
+  "name": "@dags/dag-gateway-in-memory",
+  "version": "0.1.0",
+  "description": "DAG gateway that is implemented for local memory",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/AlexanderLapygin/dags.git"
   },
-  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/lib/dag/README.md",
+  "homepage": "https://github.com/AlexanderLapygin/dags/blob/master/packages/dag-gateway-in-memory/README.md",
   "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -25,12 +25,13 @@
     "lint:types": "tsc --noEmit",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
-    "pub:test": "yarn publish --access public"
+    "pub": "yarn build:release && yarn publish --access public"
   },
   "dependencies": {
-    "@dags/dag-base": "^0.2.2",
-    "@dags/dag-gateway-rest": "^0.1.0",
-    "@dags/uid-uuid": "^0.5.1"
+    "@dags/dag-base": "^0.2.2"
+  },
+  "devDependencies": {
+    "@dags/uid-local": "^0.2.0"
   },
   "files": [
     "*.js",
@@ -38,11 +39,9 @@
     "dist"
   ],
   "keywords": [
-    "data structure",
-    "dag",
-    "global",
-    "graph",
-    "typescript"
+    "typescript",
+    "uid",
+    "uuid"
   ],
   "publishConfig": {
     "access": "public"
