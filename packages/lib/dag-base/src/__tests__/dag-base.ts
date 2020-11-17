@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { UID, DagBase } from '../dag-base'
-import { DagGatewayInMemory } from './helpers/dag-gateway-in-memory'
+import { DagGatewayInMemory } from '@dags/dag-gateway-in-memory' // Wrong dependency but temporary
 
 export class UIDMock implements UID {
   private static _counter = 0
