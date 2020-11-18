@@ -24,6 +24,7 @@
     "lint:src": "eslint src --ext .ts --config ../../../.eslintrc",
     "lint:types": "tsc --noEmit",
     "test": "jest",
+    "test:integration": "jest --testPathPattern=ispec\\.ts$",
     "test:coverage": "yarn test --coverage",
     "pub:test": "yarn publish --access public"
   },
