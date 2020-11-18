@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { DagGateway, UID } from '@dags/dag-base'
+import { DagOut, UID } from '@dags/dag-base'
 import { DagGatewayRest } from '../dag-gateway-rest'
 import { UIDLocal } from '@dags/uid-local'
 
 // Temporarily it is a copy of dag-gateway-in-memory implementation
 // TBD Do right implementation
 describe('DagGatewayRest', () => {
-  let dagGateway: DagGateway
+  let dagGateway: DagOut
 
   beforeEach(function () {
     dagGateway = new DagGatewayRest()

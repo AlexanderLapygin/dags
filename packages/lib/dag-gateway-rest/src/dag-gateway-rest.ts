@@ -2,11 +2,11 @@
  * Provides DAG gateway-in-memory implementation.
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { DagGateway, UID } from '@dags/dag-base'
+import { DagOut, UID } from '@dags/dag-base'
 
 // Temporarily it is a copy of dag-gateway-in-memory implementation
 // TBD Do right implementation
-export class DagGatewayRest implements DagGateway {
+export class DagGatewayRest implements DagOut {
   /**
    * Set of nodes of the dag
    * @type {Set}
@@ -28,7 +28,7 @@ export class DagGatewayRest implements DagGateway {
    */
   private _parentMap = new Map<UID, Set<UID>>()
 
-  addNode(node: UID): DagGateway {
+  addNode(node: UID): DagOut {
     this._nodes.add(node)
     this._parentMap.set(node, new Set<UID>())
     this._childMap.set(node, new Set<UID>())
@@ -37,10 +37,10 @@ export class DagGatewayRest implements DagGateway {
 
   /**
    * Delete a node from nodeset of this graph.
-   * @return {DagGateway} this graph.
+   * @return {DagOut} this graph.
    * @param node
    */
-  deleteNode(node: UID): DagGateway {
+  deleteNode(node: UID): DagOut {
     for (const parent of this.getParents(node)) {
       this.removeParenthood(node, parent)
     }
@@ -85,9 +85,9 @@ export class DagGatewayRest implements DagGateway {
 
   /**
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
-   * @return {DagGateway} this dag
+   * @return {DagOut} this dag
    */
-  setParenthood(parent: UID, child: UID): DagGateway {
+  setParenthood(parent: UID, child: UID): DagOut {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 
@@ -102,9 +102,9 @@ export class DagGatewayRest implements DagGateway {
   /**
    * Remove parent node from the given node and implicitly remove the given node.
    * from the parent node as a child.
-   * @return {DagGateway} this dag
+   * @return {DagOut} this dag
    */
-  removeParenthood(parent: UID, child: UID): DagGateway {
+  removeParenthood(parent: UID, child: UID): DagOut {
     if (!this._nodes.has(child)) throw new Error("Child node doesn't belong to this graph")
     if (!this._nodes.has(parent)) throw new Error("Parent node doesn't belong to this graph")
 

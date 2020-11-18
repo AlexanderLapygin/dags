@@ -17,15 +17,9 @@ export interface UID {
 }
 
 /**
- * Required interface for Gateway
+ * Common interface of the Dag
  */
-export interface DagGateway {
-  /**
-   * Add node to this dag.
-   * @return {DagGateway} itself
-   */
-  addNode(node: UID): DagGateway
-
+export interface DagCommon {
   /**
    * Obtain nodeset of this dag
    * @return {Set<UID>} nodeset of this dag
@@ -37,7 +31,7 @@ export interface DagGateway {
    * @return {DagGateway} itself.
    * @param node
    */
-  deleteNode(node: UID): DagGateway
+  deleteNode(node: UID): DagOut
 
   /**
    * Obtain parents of the given node.
@@ -57,13 +51,13 @@ export interface DagGateway {
    * Add parent node to the given node and implicitly add given node to the parent node as a child.
    * @return {DagGateway} itself
    */
-  setParenthood(parent: UID, child: UID): DagGateway
+  setParenthood(parent: UID, child: UID): DagOut
 
   /**
    * Remove parent node to the given node and implicitly remove given node to the parent node as a child.
    * @return {DagGateway} itself
    */
-  removeParenthood(parent: UID, child: UID): DagGateway
+  removeParenthood(parent: UID, child: UID): DagOut
 
   /**
    * Checking if the node being checked is a descendant or not.
@@ -75,9 +69,31 @@ export interface DagGateway {
 }
 
 /**
+ * In interface of Dag
+ */
+export interface DagIn extends DagCommon {
+  /**
+   * Create a node of this dag.
+   * @return {UID} id of the node.
+   */
+  newNode(): UID
+}
+
+/**
+ * Out interface of Dag
+ */
+export interface DagOut extends DagCommon {
+  /**
+   * Add node to this dag.
+   * @return {DagOut} itself
+   */
+  addNode(node: UID): DagOut
+}
+
+/**
  * Provides DAG - Directed Acyclic Graph functionality.
  */
-export class DagBase implements DagGateway {
+export class DagBase implements DagIn, DagOut {
   /**
    * Id of this dag
    * @type {Set}
@@ -92,7 +108,7 @@ export class DagBase implements DagGateway {
    * @param gateway dag gateway
    * @param uid constructor for UIDs
    */
-  constructor(private gateway: DagGateway, public uid: UIDConstructor) {
+  constructor(private gateway: DagOut, public uid: UIDConstructor) {
     this.id = new uid()
   }
 
@@ -106,11 +122,11 @@ export class DagBase implements DagGateway {
     return nodeUID
   }
 
-  addNode(node: UID): DagGateway {
+  addNode(node: UID): DagOut {
     throw new Error('Unsupported method in this implementation. Use newNode instead, please!')
   }
 
-  deleteNode(node: UID): DagGateway {
+  deleteNode(node: UID): DagOut {
     this.gateway.deleteNode(node)
     return this
   }
@@ -127,12 +143,12 @@ export class DagBase implements DagGateway {
     return this.gateway.getChildren(node)
   }
 
-  setParenthood(parent: UID, child: UID): DagGateway {
+  setParenthood(parent: UID, child: UID): DagOut {
     this.gateway.setParenthood(parent, child)
     return this
   }
 
-  removeParenthood(parent: UID, child: UID): DagGateway {
+  removeParenthood(parent: UID, child: UID): DagOut {
     this.gateway.removeParenthood(parent, child)
     return this
   }
