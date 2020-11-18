@@ -28,6 +28,9 @@
     "test:coverage": "yarn test --coverage",
     "pub:test": "yarn publish --access public"
   },
+  "dependencies": {
+    "jest-mock-extended": "^1.0.10"
+  },
   "files": [
     "*.js",
     "*.d.ts",

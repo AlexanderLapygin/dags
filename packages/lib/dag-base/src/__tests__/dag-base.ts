@@ -1,6 +1,7 @@
+import { mock } from 'jest-mock-extended'
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { UID, DagBase } from '../dag-base'
-import { DagGatewayInMemory } from '@dags/dag-gateway-in-memory' // Wrong dependency but temporary
+import { UID, DagBase, DagOut } from '../dag-base'
 
 export class UIDMock implements UID {
   private static _counter = 0
@@ -19,109 +20,63 @@ export class UIDMock implements UID {
   }
 }
 
-describe('Dag with UIDMock', () => {
+describe('DagBase', () => {
   let dag: DagBase
+  let mockDagOut: DagOut
 
   beforeEach(function () {
-    dag = new DagBase(new DagGatewayInMemory(), UIDMock)
+    mockDagOut = mock<DagOut>()
+    dag = new DagBase(mockDagOut, UIDMock)
   })
 
   describe('constructor', () => {
     it('Should execute without any problem', () => {
-      expect(() => new DagBase(new DagGatewayInMemory(), UIDMock)).not.toThrow()
+      expect(() => new DagBase(mockDagOut, UIDMock)).not.toThrow()
     })
     it('Should create a unique own id', () => {
-      const dag1 = new DagBase(new DagGatewayInMemory(), UIDMock)
-      const dag2 = new DagBase(new DagGatewayInMemory(), UIDMock)
+      const dag1 = new DagBase(mockDagOut, UIDMock)
+      const dag2 = new DagBase(mockDagOut, UIDMock)
       expect(dag1.id).not.toBe(dag2.id)
-    })
-    it('Should return an empty nodeset', () => {
-      expect(dag.getNodes().size).toBe(0)
     })
   })
 
   describe('getNodes', () => {
-    it('Should return an actual dag nodeset', () => {
-      expect(dag.getNodes().size).toBe(0)
-      const nodeUID = dag.newNode()
-      expect(dag.getNodes()).toContain(nodeUID)
-      dag.deleteNode(nodeUID)
-      expect(dag.getNodes()).not.toContain(nodeUID)
+    it('Should call DagOut.getNodes()', () => {
+      dag.getNodes()
+      expect(mockDagOut.getNodes).toHaveBeenCalled()
     })
   })
 
   describe('newNode', () => {
-    it('Should increase a nodeset size', () => {
-      dag.newNode()
-      expect(dag.getNodes().size).toBe(1)
-      dag.newNode()
-      expect(dag.getNodes().size).toBe(2)
+    it('Should return a unique node id', () => {
+      expect(dag.newNode()).not.toBe(dag.newNode())
     })
-    it('Should insert nodeUID in the nodeset', () => {
-      const nodeUID1 = dag.newNode()
-      expect(dag.getNodes()).toContain(nodeUID1)
-      const nodeUID2 = dag.newNode()
-      expect(dag.getNodes()).toContain(nodeUID2)
+    it('Should call DagOut.addNode() with generated node uid', () => {
+      const node = dag.newNode()
+      expect(mockDagOut.addNode).toHaveBeenCalledWith(node)
     })
   })
 
   describe('deleteNode', () => {
-    let node1: UID
-    let node2: UID
+    let node: UID
     beforeEach(function () {
-      node1 = dag.newNode()
-      node2 = dag.newNode()
+      node = dag.newNode()
     })
 
     it('Should return this dag', () => {
-      expect(dag.deleteNode(node1)).toBe(dag)
+      expect(dag.deleteNode(node)).toBe(dag)
     })
-    it('Should decrease a nodeset size', () => {
-      expect(dag.getNodes().size).toBe(2)
-      expect(dag.deleteNode(node1).getNodes().size).toBe(1)
-      expect(dag.deleteNode(node2).getNodes().size).toBe(0)
-    })
-    it('Should remove nodeUID from the nodeset', () => {
-      expect(dag.deleteNode(node1).getNodes()).not.toContain(node1)
-      expect(dag.deleteNode(node2).getNodes()).not.toContain(node1)
-    })
-    it('Should remove a parent-child relationships of the given node', () => {
-      const node = dag.newNode()
-      const parent1 = dag.newNode()
-      const parent2 = dag.newNode()
-      const child1 = dag.newNode()
-      const child2 = dag.newNode()
-      dag.setParenthood(node, parent1)
-      dag.setParenthood(node, parent2)
-      dag.setParenthood(child1, node)
-      dag.setParenthood(child2, node)
-
+    it('Should call DagOut.deleteNode() with the same node id', () => {
       dag.deleteNode(node)
-
-      expect(dag.getChildren(parent1)).not.toContain(node)
-      expect(dag.getChildren(parent2)).not.toContain(node)
-      expect(dag.getParents(child1)).not.toContain(node)
-      expect(dag.getParents(child2)).not.toContain(node)
+      expect(mockDagOut.deleteNode).toHaveBeenCalledWith(node)
     })
   })
+
   describe('getParents', () => {
-    it('Should return an empty parent set of the given node', () => {
+    it('Should call DagOut.getParents() with the same node uid', () => {
       const node = dag.newNode()
-      expect(dag.getParents(node).size).toBe(0)
-    })
-    it('Should return an actual parent set of the given node', () => {
-      const current = dag.newNode()
-      const parent = dag.newNode()
-      expect(dag.getParents(current)).not.toContain(parent)
-      dag.setParenthood(parent, current)
-      expect(dag.getParents(current)).toContain(parent)
-      dag.removeParenthood(parent, current)
-      expect(dag.getParents(current)).not.toContain(parent)
-    })
-    it('Should throw an error in case of orphan given node', () => {
-      expect(() => {
-        return dag.getParents(new dag.uid())
-      }).toThrowError("node doesn't belong to this graph")
+      dag.getParents(node)
+      expect(mockDagOut.getParents).toHaveBeenCalledWith(node)
     })
   })
 
@@ -133,139 +88,47 @@ describe('Dag with UIDMock', () => {
       parent = dag.newNode()
     })
 
-    it('Should throw an error in case of both orphan UIDs', () => {
-      expect(() => dag.setParenthood(new dag.uid(), new dag.uid())).toThrowError()
-    })
-    it('Should throw an Error in case of orphan currentNode', () => {
-      expect(() => dag.setParenthood(parent, new dag.uid())).toThrowError(
-        "Child node doesn't belong to this graph"
-      )
-    })
-    it('Should throw an Error in case of orphan parent', () => {
-      expect(() => dag.setParenthood(new dag.uid(), child)).toThrowError(
-        "Parent node doesn't belong to this graph"
-      )
-    })
     it('Should return this dag', () => {
       expect(dag.setParenthood(parent, child)).toBe(dag)
     })
-    it('Should add the given parent to the given parent set', () => {
-      expect(dag.getParents(child)).not.toContain(parent)
+    it('Should call DagOut.setParenthood() with the same parent and child ids', () => {
       dag.setParenthood(parent, child)
-      expect(dag.getParents(child)).toContain(parent)
-    })
-    it("Should add the given node to the parent's child set", () => {
-      expect(dag.getChildren(parent)).not.toContain(child)
-      dag.setParenthood(parent, child)
-      expect(dag.getChildren(parent)).toContain(child)
-    })
-    it('Should throw an Error when a parenthood established with itself', () => {
-      expect(() => dag.setParenthood(child, child)).toThrowError(
-        'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
-      )
-    })
-    it('Should throw an error when parenthood establishing leads to a cycle', () => {
-      dag.setParenthood(parent, child)
-      expect(() => dag.setParenthood(child, parent)).toThrowError(
-        'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
-      )
-      const grandson = dag.newNode()
-      dag.setParenthood(child, grandson)
-      expect(() => dag.setParenthood(grandson, parent)).toThrowError(
-        'The Parent-child relationship is not possible: this parenthood establishing leads to a cycle'
-      )
+      expect(mockDagOut.setParenthood).toHaveBeenCalledWith(parent, child)
     })
   })
 
   describe('removeParenthood', () => {
     let child: UID
     let parent: UID
-    let anotherParent: UID
     beforeEach(function () {
       child = dag.newNode()
       parent = dag.newNode()
-      anotherParent = dag.newNode()
       dag.setParenthood(parent, child)
-      dag.setParenthood(anotherParent, child)
     })
 
-    it('Should throw an error in case of both orphan UIDs', () => {
-      expect(() => dag.removeParenthood(new dag.uid(), new dag.uid())).toThrowError()
-    })
-    it('Should throw an Error in case of orphan currentNode', () => {
-      expect(() => dag.removeParenthood(parent, new dag.uid())).toThrowError(
-        "Child node doesn't belong to this graph"
-      )
-    })
-    it('Should throw an Error in case of orphan parent', () => {
-      expect(() => dag.removeParenthood(new dag.uid(), child)).toThrowError(
-        "Parent node doesn't belong to this graph"
-      )
-    })
     it('Should return this dag', () => {
       expect(dag.removeParenthood(parent, child)).toBe(dag)
     })
-    it('Should remove the given parent from the given parent set', () => {
-      expect(dag.getParents(child)).toContain(parent)
+    it('Should call DagOut.removeParenthood() with the same parent and child ids', () => {
       dag.removeParenthood(parent, child)
-      expect(dag.getParents(child)).not.toContain(parent)
-    })
-    it("Should remove the given child from the parent's child set", () => {
-      expect(dag.getChildren(parent)).toContain(child)
-      dag.removeParenthood(parent, child)
-      expect(dag.getChildren(parent)).not.toContain(child)
+      expect(mockDagOut.removeParenthood).toHaveBeenCalledWith(parent, child)
     })
   })
 
   describe('getChildren', () => {
-    it('Should return empty child set of the given node', () => {
+    it('Should call DagOut.getChildren() with the same node uid', () => {
       const node = dag.newNode()
-      expect(dag.getChildren(node).size).toBe(0)
-    })
-    it('Should return an actual child set of the given node', () => {
-      const current = dag.newNode()
-      const child = dag.newNode()
-      expect(dag.getChildren(current)).not.toContain(child)
-      dag.setParenthood(current, child)
-      expect(dag.getChildren(current)).toContain(child)
-      dag.removeParenthood(current, child)
-      expect(dag.getChildren(current)).not.toContain(child)
-    })
-    it('Should throw an error in case of orphan given node', () => {
-      expect(() => dag.getChildren(new dag.uid())).toThrowError("node doesn't belong to this graph")
+      dag.getChildren(node)
+      expect(mockDagOut.getChildren).toHaveBeenCalledWith(node)
     })
   })
 
   describe('isDescendant', () => {
-    let node: UID
-    let son: UID
-    let grandson: UID
-
-    beforeEach(function () {
-      node = dag.newNode()
-      son = dag.newNode()
-      grandson = dag.newNode()
-      dag.setParenthood(node, son)
-      dag.setParenthood(son, grandson)
-    })
-
-    it('Should return false on arbitrary new node pair', () => {
-      expect(dag.isDescendant(dag.newNode(), dag.newNode())).toBe(false)
-    })
-    it('Should return true when parenthood establishing leads to a cycle', () => {
-      expect(dag.isDescendant(node, node)).toBe(true)
-    })
-    it('Should return true for node and child', () => {
-      expect(dag.isDescendant(node, son)).toBe(true)
-    })
-    it('Should return false for child and node', () => {
-      expect(dag.isDescendant(son, node)).toBe(false)
-    })
-    it('Should return true for node and grandson', () => {
-      expect(dag.isDescendant(node, son)).toBe(true)
-    })
-    it('Should return false for grandson and node ', () => {
-      expect(dag.isDescendant(son, node)).toBe(false)
+    it('Should call DagOut.removeParenthood() with the same child and parent ids', () => {
+      const child = dag.newNode()
+      const parent = dag.newNode()
+      dag.isDescendant(child, parent)
+      expect(mockDagOut.isDescendant).toHaveBeenCalledWith(child, parent)
     })
   })
 })
