@@ -12,7 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/AlexanderLapygin/dags.git"
   },
-  "author": "https://github.com/AlexanderLapygin",
   "author": "Alexander Lapygin <alexanderlapygin@gmail.com>",
   "scripts": {
     "prestart": "yarn && yarn bootstrap",
