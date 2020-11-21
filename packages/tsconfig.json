@@ -16,9 +16,15 @@
     "strictPropertyInitialization": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "preserveSymlinks": true
+    "downlevelIteration": true
   },
   "include": ["./lib"],
-  "exclude": ["../node_modules"]
+  "exclude": ["../node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "resolveJsonModule": true,
+      "noImplicitAny": false
+    }
+  }
 }
