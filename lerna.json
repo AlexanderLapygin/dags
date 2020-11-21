@@ -1,11 +1,14 @@
 {
-  "packages": ["packages/lib/*", "packages/ui-lib/*", "examples/*"],
+  "packages": ["packages/lib/*"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
+  "registry": "https://registry.npmjs.org/",
   "command": {
+    "version": { "exact": true },
     "publish": {
       "conventionalCommits": true,
+      "message": "chore(release): publish",
       "ignoreChanges": [
         "**/doc/**",
         "**/example/**",

@@ -64,6 +64,7 @@
     "esm": "^3.2.25",
     "husky": "^4.3.0",
     "jest": "^26.6.1",
+    "jest-watch-typeahead": "^0.6.1",
     "lerna": "^3.22.1",
     "lint-staged": "^10.4.2",
     "nodemon": "^2.0.6",
