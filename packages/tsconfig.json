@@ -16,8 +16,7 @@
     "strictPropertyInitialization": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "preserveSymlinks": true
+    "downlevelIteration": true
   },
   "include": ["./lib"],
   "exclude": ["../node_modules"]
