@@ -37,7 +37,7 @@ At the moment, the library exposes such modules:
 For example, you can use the `dag` module like this:
 
 ```ts
-import { DagG } from '@dags/core'
+import { Dag } from '@dags/core'
 
 const dag = new Dag()
 
